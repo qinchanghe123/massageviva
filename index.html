@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
 
   <title>Massage ViVa Georgetown | Massage & Relaxation</title>
 
@@ -11,11 +15,13 @@
     content="Massage ViVa Georgetown offers Body Massage, Thai Massage, Couples Massage, Pregnancy Massage and CBD Oil Massage in a calm, private setting."
   >
 
-  <meta name="theme-color" content="#10251d">
+  <meta name="theme-color" content="#0d2119">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://i.pinimg.com">
+  <link rel="preconnect" href="https://assets.setmore.com">
+  <link rel="preconnect" href="https://assets.pinterest.com">
 
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
@@ -24,41 +30,58 @@
 
   <style>
     /* =========================================================
-       DESIGN SYSTEM
+       DESIGN TOKENS
     ========================================================= */
     :root {
-      --forest-950: #07130f;
+      --forest-950: #06130e;
       --forest-900: #0d2119;
-      --forest-800: #15352a;
-      --forest-700: #24483b;
-      --sage: #84988b;
+      --forest-850: #112a21;
+      --forest-800: #17382c;
+      --forest-700: #294f40;
 
       --ivory: #f8f4eb;
       --cream: #eee5d6;
+      --sand: #d8cab5;
       --white: #fffdfa;
 
-      --gold: #c7a364;
-      --gold-light: #e5cea2;
+      --gold: #c6a263;
+      --gold-light: #e6cea0;
+      --gold-dark: #9f7b3e;
 
       --text: #12261f;
-      --muted: #647069;
+      --muted: #65716a;
       --line: rgba(18, 38, 31, 0.13);
 
-      --shadow: 0 25px 70px rgba(7, 24, 17, 0.13);
-      --shadow-dark: 0 32px 85px rgba(2, 13, 8, 0.32);
+      --shadow:
+        0 28px 75px rgba(7, 24, 17, 0.13);
+
+      --shadow-dark:
+        0 34px 90px rgba(2, 13, 8, 0.32);
 
       --radius-sm: 14px;
       --radius-md: 24px;
       --radius-lg: 34px;
 
-      --serif: "Cormorant Garamond", Georgia, serif;
-      --sans: "Manrope", Arial, sans-serif;
+      --serif:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      --sans:
+        "Manrope",
+        Arial,
+        sans-serif;
 
       --header-height: 82px;
       --container: min(1180px, calc(100% - 40px));
     }
 
-    * {
+    /* =========================================================
+       RESET
+    ========================================================= */
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
     }
 
@@ -70,23 +93,28 @@
     body {
       margin: 0;
       overflow-x: hidden;
+
       color: var(--text);
+
       background:
         radial-gradient(
-          circle at 10% 12%,
-          rgba(199, 163, 100, 0.09),
-          transparent 30rem
+          circle at 8% 14%,
+          rgba(198, 162, 99, 0.09),
+          transparent 31rem
         ),
         radial-gradient(
-          circle at 90% 50%,
-          rgba(36, 72, 59, 0.06),
+          circle at 91% 53%,
+          rgba(41, 79, 64, 0.07),
           transparent 34rem
         ),
         var(--ivory);
+
       font-family: var(--sans);
       font-size: 16px;
       line-height: 1.7;
+
       -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
     body.menu-open {
@@ -97,6 +125,7 @@
       display: block;
       width: 100%;
       height: 100%;
+
       object-fit: cover;
       background: var(--forest-800);
     }
@@ -141,9 +170,12 @@
       display: inline-flex;
       align-items: center;
       gap: 12px;
+
       margin-bottom: 18px;
+
       color: var(--gold);
-      font-size: 0.72rem;
+
+      font-size: 0.71rem;
       font-weight: 700;
       letter-spacing: 0.2em;
       line-height: 1.2;
@@ -153,29 +185,34 @@
     .eyebrow::before {
       width: 34px;
       height: 1px;
+
       content: "";
       background: currentColor;
     }
 
     .display-title {
-      max-width: 850px;
+      max-width: 860px;
       margin: 0;
+
       font-family: var(--serif);
       font-size: clamp(3.6rem, 8vw, 7rem);
       font-weight: 600;
       letter-spacing: -0.05em;
       line-height: 0.91;
+
       text-wrap: balance;
     }
 
     .section-title {
-      max-width: 780px;
+      max-width: 790px;
       margin: 0;
+
       font-family: var(--serif);
       font-size: clamp(2.7rem, 5.6vw, 5.2rem);
       font-weight: 600;
       letter-spacing: -0.04em;
       line-height: 0.96;
+
       text-wrap: balance;
     }
 
@@ -186,18 +223,24 @@
     }
 
     .lead {
-      max-width: 680px;
+      max-width: 690px;
       margin: 24px 0 0;
+
       color: var(--muted);
+
       font-size: clamp(1rem, 1.3vw, 1.14rem);
     }
 
     .section-heading {
       display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+      grid-template-columns:
+        minmax(0, 1.3fr)
+        minmax(280px, 0.7fr);
+
       align-items: end;
       gap: 54px;
-      margin-bottom: clamp(48px, 7vw, 82px);
+
+      margin-bottom: clamp(48px, 7vw, 84px);
     }
 
     .section-heading .lead {
@@ -207,38 +250,58 @@
     .gold-rule {
       width: 75px;
       height: 1px;
+
       margin: 27px 0;
-      background: linear-gradient(90deg, var(--gold), transparent);
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--gold),
+          transparent
+        );
     }
 
     .button-row {
       display: flex;
       flex-wrap: wrap;
+      align-items: center;
       gap: 14px;
+
       margin-top: 34px;
     }
 
+    /* =========================================================
+       BUTTONS
+    ========================================================= */
     .btn,
     .setmore-trigger {
       min-height: 52px;
+
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
+
       padding: 14px 24px;
+
       border: 1px solid transparent;
       border-radius: 999px;
+
       cursor: pointer;
-      font-size: 0.79rem;
+
+      font-size: 0.78rem;
       font-weight: 700;
       letter-spacing: 0.08em;
+      line-height: 1.1;
       text-transform: uppercase;
+
       transition:
         transform 220ms ease,
         border-color 220ms ease,
         background 220ms ease,
         color 220ms ease,
-        box-shadow 220ms ease;
+        box-shadow 220ms ease,
+        filter 220ms ease;
     }
 
     .btn:hover,
@@ -251,34 +314,34 @@
     .nav-link:focus-visible,
     .menu-toggle:focus-visible,
     .carousel-button:focus-visible,
+    .carousel-dot:focus-visible,
     .faq-question:focus-visible,
     #Anywhere_button_iframe:focus-visible {
-      outline: 3px solid rgba(229, 206, 162, 0.68);
+      outline: 3px solid rgba(230, 206, 160, 0.7);
       outline-offset: 4px;
     }
 
     .btn--gold,
     .setmore-trigger {
       color: var(--forest-950);
-      background: linear-gradient(135deg, var(--gold-light), var(--gold));
-      box-shadow: 0 14px 34px rgba(199, 163, 100, 0.25);
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--gold-light),
+          var(--gold)
+        );
+
+      box-shadow:
+        0 15px 36px rgba(198, 162, 99, 0.26);
     }
 
     .btn--gold:hover,
     .setmore-trigger:hover {
-      box-shadow: 0 18px 44px rgba(199, 163, 100, 0.36);
-    }
+      filter: brightness(1.035);
 
-    .btn--light {
-      color: var(--white);
-      border-color: rgba(255, 255, 255, 0.35);
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(12px);
-    }
-
-    .btn--light:hover {
-      border-color: rgba(255, 255, 255, 0.65);
-      background: rgba(255, 255, 255, 0.14);
+      box-shadow:
+        0 20px 48px rgba(198, 162, 99, 0.37);
     }
 
     .btn--dark {
@@ -288,36 +351,53 @@
 
     .btn--outline {
       color: var(--text);
+
       border-color: rgba(18, 38, 31, 0.22);
       background: transparent;
     }
 
-    .btn svg,
-    .setmore-trigger svg {
+    .btn--light {
+      color: var(--white);
+
+      border-color: rgba(255, 255, 255, 0.34);
+
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+    }
+
+    .btn--light:hover {
+      border-color: rgba(255, 255, 255, 0.68);
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    .btn svg {
       width: 18px;
       height: 18px;
+
       fill: none;
       stroke: currentColor;
+      stroke-width: 1.8;
       stroke-linecap: round;
       stroke-linejoin: round;
-      stroke-width: 1.8;
     }
 
     /* =========================================================
-       SETMORE BOOK NOW BUTTON
-       Overrides the inline style from the supplied integration.
+       SETMORE PRIMARY BUTTON
     ========================================================= */
     #Anywhere_button_iframe.anywhere-book-now-button {
       min-height: 54px !important;
+
       display: inline-flex !important;
       align-items: center !important;
       justify-content: center !important;
-      gap: 10px !important;
 
       padding: 15px 29px !important;
 
       color: var(--forest-950) !important;
-      border: 1px solid rgba(255, 255, 255, 0.18) !important;
+
+      border:
+        1px solid rgba(255, 255, 255, 0.2) !important;
+
       border-radius: 999px !important;
 
       background:
@@ -328,7 +408,7 @@
         ) !important;
 
       box-shadow:
-        0 16px 38px rgba(199, 163, 100, 0.3) !important;
+        0 16px 40px rgba(198, 162, 99, 0.31) !important;
 
       font-family: var(--sans) !important;
       font-size: 0.79rem !important;
@@ -341,15 +421,16 @@
 
       transition:
         transform 220ms ease,
-        box-shadow 220ms ease,
-        filter 220ms ease !important;
+        filter 220ms ease,
+        box-shadow 220ms ease !important;
     }
 
     #Anywhere_button_iframe.anywhere-book-now-button:hover {
       transform: translateY(-2px);
       filter: brightness(1.04);
+
       box-shadow:
-        0 20px 48px rgba(199, 163, 100, 0.38) !important;
+        0 21px 50px rgba(198, 162, 99, 0.4) !important;
     }
 
     /* =========================================================
@@ -357,16 +438,20 @@
     ========================================================= */
     .site-header {
       height: var(--header-height);
+
       position: fixed;
       z-index: 1000;
       top: 0;
       right: 0;
       left: 0;
+
       color: var(--white);
+
       border-bottom: 1px solid transparent;
+
       transition:
-        background 300ms ease,
         color 300ms ease,
+        background 300ms ease,
         border-color 300ms ease,
         box-shadow 300ms ease;
     }
@@ -374,19 +459,28 @@
     .site-header.is-scrolled,
     .site-header.menu-visible {
       color: var(--text);
-      border-bottom-color: rgba(18, 38, 31, 0.08);
-      background: rgba(248, 244, 235, 0.9);
-      box-shadow: 0 10px 35px rgba(4, 20, 13, 0.08);
+
+      border-bottom-color:
+        rgba(18, 38, 31, 0.08);
+
+      background:
+        rgba(248, 244, 235, 0.91);
+
+      box-shadow:
+        0 10px 35px rgba(4, 20, 13, 0.08);
+
       backdrop-filter: blur(18px);
     }
 
     .nav-shell {
       width: var(--container);
       height: 100%;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 28px;
+
       margin-inline: auto;
     }
 
@@ -394,19 +488,34 @@
       display: inline-flex;
       align-items: center;
       gap: 13px;
+
       flex-shrink: 0;
     }
 
     .brand-mark {
       width: 44px;
       height: 44px;
+
       display: grid;
       place-items: center;
+
       color: var(--forest-950);
-      border: 1px solid rgba(255, 255, 255, 0.32);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.32);
+
       border-radius: 50%;
-      background: linear-gradient(145deg, var(--gold-light), var(--gold));
-      box-shadow: inset 0 0 0 4px rgba(255, 255, 255, 0.17);
+
+      background:
+        linear-gradient(
+          145deg,
+          var(--gold-light),
+          var(--gold)
+        );
+
+      box-shadow:
+        inset 0 0 0 4px rgba(255, 255, 255, 0.17);
+
       font-family: var(--serif);
       font-size: 1.22rem;
       font-weight: 700;
@@ -416,6 +525,7 @@
     .brand-copy {
       display: grid;
       gap: 1px;
+
       line-height: 1.05;
     }
 
@@ -431,6 +541,7 @@
       font-weight: 700;
       letter-spacing: 0.2em;
       text-transform: uppercase;
+
       opacity: 0.72;
     }
 
@@ -443,7 +554,8 @@
     .nav-link {
       position: relative;
       padding: 10px 0;
-      font-size: 0.71rem;
+
+      font-size: 0.7rem;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -452,12 +564,15 @@
     .nav-link::after {
       width: 0;
       height: 1px;
+
       position: absolute;
       right: 0;
       bottom: 5px;
       left: auto;
+
       content: "";
       background: var(--gold);
+
       transition: width 220ms ease;
     }
 
@@ -471,62 +586,77 @@
     .header-book {
       min-height: 42px;
       flex-shrink: 0;
+
       padding: 10px 17px;
-      font-size: 0.68rem;
+
+      font-size: 0.67rem;
     }
 
     .menu-toggle {
       width: 46px;
       height: 46px;
+
       display: none;
       place-items: center;
+
       padding: 0;
+
+      color: currentColor;
+
       border: 1px solid currentColor;
       border-radius: 50%;
+
       cursor: pointer;
       background: transparent;
     }
 
-    .menu-toggle-lines {
+    .menu-lines {
       width: 18px;
       height: 14px;
+
       position: relative;
     }
 
-    .menu-toggle-lines span {
+    .menu-lines span {
       width: 100%;
       height: 1.5px;
+
       position: absolute;
       left: 0;
+
       background: currentColor;
+
       transition:
-        transform 220ms ease,
         top 220ms ease,
-        opacity 220ms ease;
+        opacity 220ms ease,
+        transform 220ms ease;
     }
 
-    .menu-toggle-lines span:nth-child(1) {
+    .menu-lines span:nth-child(1) {
       top: 1px;
     }
 
-    .menu-toggle-lines span:nth-child(2) {
+    .menu-lines span:nth-child(2) {
       top: 6px;
     }
 
-    .menu-toggle-lines span:nth-child(3) {
+    .menu-lines span:nth-child(3) {
       top: 11px;
     }
 
-    .menu-toggle[aria-expanded="true"] span:nth-child(1) {
+    .menu-toggle[aria-expanded="true"]
+    .menu-lines span:nth-child(1) {
       top: 6px;
       transform: rotate(45deg);
     }
 
-    .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+    .menu-toggle[aria-expanded="true"]
+    .menu-lines span:nth-child(2) {
       opacity: 0;
     }
 
-    .menu-toggle[aria-expanded="true"] span:nth-child(3) {
+    .menu-toggle[aria-expanded="true"]
+    .menu-lines span:nth-child(3) {
       top: 6px;
       transform: rotate(-45deg);
     }
@@ -541,10 +671,14 @@
     .hero {
       min-height: 760px;
       height: 100svh;
+
       position: relative;
+
       display: grid;
       align-items: end;
+
       overflow: hidden;
+
       color: var(--white);
       background: var(--forest-950);
     }
@@ -558,6 +692,7 @@
     .hero-slide {
       opacity: 0;
       transform: scale(1.06);
+
       transition:
         opacity 1.2s ease,
         transform 8s ease;
@@ -565,57 +700,69 @@
 
     .hero-slide.is-active {
       z-index: 1;
+
       opacity: 1;
       transform: scale(1);
     }
 
     .hero-slide img {
-      filter: saturate(0.75) contrast(1.04);
+      filter:
+        saturate(0.75)
+        contrast(1.04);
     }
 
     .hero-overlay {
-      z-index: 2;
       position: absolute;
+      z-index: 2;
       inset: 0;
+
       background:
         linear-gradient(
           90deg,
-          rgba(3, 14, 10, 0.9) 0%,
-          rgba(3, 14, 10, 0.6) 48%,
-          rgba(3, 14, 10, 0.23) 100%
+          rgba(3, 14, 10, 0.91) 0%,
+          rgba(3, 14, 10, 0.61) 48%,
+          rgba(3, 14, 10, 0.24) 100%
         ),
         linear-gradient(
           180deg,
           rgba(3, 13, 9, 0.32) 0%,
           transparent 34%,
-          rgba(3, 13, 9, 0.76) 100%
+          rgba(3, 13, 9, 0.78) 100%
         ),
         radial-gradient(
           circle at 76% 38%,
-          rgba(199, 163, 100, 0.16),
-          transparent 30%
+          rgba(198, 162, 99, 0.17),
+          transparent 31%
         );
     }
 
     .hero::before {
       width: 520px;
       height: 520px;
-      z-index: 3;
+
       position: absolute;
+      z-index: 3;
       top: 14%;
       right: -210px;
+
       content: "";
-      border: 1px solid rgba(229, 206, 162, 0.19);
+
+      border:
+        1px solid rgba(230, 206, 160, 0.19);
+
       border-radius: 50%;
+
       box-shadow:
-        0 0 0 70px rgba(229, 206, 162, 0.03),
-        0 0 0 150px rgba(229, 206, 162, 0.02);
+        0 0 0 70px rgba(230, 206, 160, 0.03),
+        0 0 0 150px rgba(230, 206, 160, 0.02);
+
       pointer-events: none;
     }
 
     .hero-content {
-      z-index: 4;
       position: relative;
+      z-index: 4;
+
       padding:
         calc(var(--header-height) + 70px)
         0
@@ -623,22 +770,25 @@
     }
 
     .hero-copy {
-      max-width: 850px;
+      max-width: 860px;
     }
 
     .hero-subtitle {
       max-width: 620px;
       margin: 27px 0 0;
+
       color: rgba(255, 255, 255, 0.79);
+
       font-size: clamp(1rem, 1.7vw, 1.2rem);
       line-height: 1.8;
     }
 
-    .hero-booking-row {
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       gap: 14px;
+
       margin-top: 34px;
     }
 
@@ -646,6 +796,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
+
       margin-top: 45px;
     }
 
@@ -653,12 +804,18 @@
       display: inline-flex;
       align-items: center;
       gap: 9px;
+
       padding: 10px 14px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.18);
+
       border-radius: 999px;
+
       background: rgba(255, 255, 255, 0.07);
       backdrop-filter: blur(10px);
-      font-size: 0.67rem;
+
+      font-size: 0.66rem;
       font-weight: 700;
       letter-spacing: 0.07em;
       text-transform: uppercase;
@@ -667,17 +824,24 @@
     .trust-item::before {
       width: 6px;
       height: 6px;
+
       content: "";
+
       border-radius: 50%;
+
       background: var(--gold-light);
-      box-shadow: 0 0 0 4px rgba(229, 206, 162, 0.12);
+
+      box-shadow:
+        0 0 0 4px rgba(230, 206, 160, 0.12);
     }
 
-    .hero-index {
-      z-index: 5;
+    .hero-dots {
       position: absolute;
+      z-index: 5;
+
       right: max(24px, calc((100vw - 1180px) / 2));
       bottom: clamp(65px, 9vh, 100px);
+
       display: flex;
       align-items: center;
       gap: 8px;
@@ -686,18 +850,24 @@
     .hero-dot {
       width: 28px;
       height: 3px;
+
       padding: 0;
       overflow: hidden;
+
       border: 0;
       border-radius: 3px;
+
       cursor: pointer;
+
       background: rgba(255, 255, 255, 0.28);
     }
 
     .hero-dot::after {
       width: 0;
       height: 100%;
+
       display: block;
+
       content: "";
       background: var(--gold-light);
     }
@@ -713,33 +883,45 @@
     .intro-band {
       position: relative;
       z-index: 8;
+
       color: var(--white);
       background: var(--forest-900);
     }
 
     .intro-grid {
       display: grid;
-      grid-template-columns: 1.35fr repeat(3, 0.55fr);
+      grid-template-columns:
+        1.35fr
+        repeat(3, 0.55fr);
     }
 
     .intro-message,
     .intro-stat {
       min-height: 184px;
+
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 35px clamp(24px, 4vw, 48px);
-      border-right: 1px solid rgba(255, 255, 255, 0.09);
+
+      padding:
+        35px
+        clamp(24px, 4vw, 48px);
+
+      border-right:
+        1px solid rgba(255, 255, 255, 0.09);
     }
 
     .intro-message {
-      padding-left: max(20px, calc((100vw - 1180px) / 2));
+      padding-left:
+        max(20px, calc((100vw - 1180px) / 2));
     }
 
     .intro-message p {
-      max-width: 580px;
+      max-width: 590px;
       margin: 0;
+
       color: rgba(255, 255, 255, 0.73);
+
       font-family: var(--serif);
       font-size: clamp(1.55rem, 2.5vw, 2.3rem);
       line-height: 1.15;
@@ -747,6 +929,7 @@
 
     .intro-stat strong {
       color: var(--gold-light);
+
       font-family: var(--serif);
       font-size: clamp(2.1rem, 4vw, 3.4rem);
       font-weight: 600;
@@ -755,8 +938,10 @@
 
     .intro-stat span {
       margin-top: 10px;
+
       color: rgba(255, 255, 255, 0.57);
-      font-size: 0.65rem;
+
+      font-size: 0.64rem;
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -770,6 +955,7 @@
       grid-template-columns:
         minmax(0, 0.9fr)
         minmax(0, 1.1fr);
+
       align-items: center;
       gap: clamp(52px, 8vw, 112px);
     }
@@ -781,10 +967,13 @@
 
     .about-image {
       position: absolute;
+
       overflow: hidden;
+
       border-radius: var(--radius-lg);
-      box-shadow: var(--shadow);
+
       background: var(--forest-800);
+      box-shadow: var(--shadow);
     }
 
     .about-image--main {
@@ -794,16 +983,20 @@
     .about-image--small {
       width: 48%;
       height: 45%;
+
       right: 0;
       bottom: 0;
+
       border: 9px solid var(--ivory);
     }
 
     .about-image--top {
       width: 31%;
       height: 24%;
+
       top: 8%;
       right: 0;
+
       border: 7px solid var(--ivory);
     }
 
@@ -818,15 +1011,23 @@
     .about-seal {
       width: 130px;
       height: 130px;
-      z-index: 4;
+
       position: absolute;
+      z-index: 4;
       right: 31%;
       bottom: 8%;
+
       display: grid;
       place-items: center;
-      border: 1px solid rgba(18, 38, 31, 0.16);
+
+      border:
+        1px solid rgba(18, 38, 31, 0.16);
+
       border-radius: 50%;
-      background: rgba(248, 244, 235, 0.95);
+
+      background:
+        rgba(248, 244, 235, 0.95);
+
       box-shadow: var(--shadow);
       backdrop-filter: blur(14px);
     }
@@ -834,15 +1035,22 @@
     .about-seal::before {
       width: 104px;
       height: 104px;
+
       position: absolute;
+
       content: "";
-      border: 1px dashed rgba(199, 163, 100, 0.7);
+
+      border:
+        1px dashed rgba(198, 162, 99, 0.7);
+
       border-radius: 50%;
     }
 
     .about-seal span {
       max-width: 76px;
+
       text-align: center;
+
       font-family: var(--serif);
       font-size: 1rem;
       line-height: 1.05;
@@ -856,15 +1064,21 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 13px;
+
       margin-top: 38px;
     }
 
     .about-highlight {
       min-height: 164px;
+
       padding: 24px 20px;
+
       border: 1px solid var(--line);
       border-radius: var(--radius-sm);
-      background: rgba(255, 253, 250, 0.55);
+
+      background:
+        rgba(255, 253, 250, 0.55);
+
       transition:
         transform 240ms ease,
         border-color 240ms ease,
@@ -873,12 +1087,17 @@
 
     .about-highlight:hover {
       transform: translateY(-5px);
-      border-color: rgba(199, 163, 100, 0.5);
-      box-shadow: 0 18px 40px rgba(7, 25, 18, 0.08);
+
+      border-color:
+        rgba(198, 162, 99, 0.5);
+
+      box-shadow:
+        0 18px 40px rgba(7, 25, 18, 0.08);
     }
 
     .highlight-number {
       color: var(--gold);
+
       font-family: var(--serif);
       font-size: 1.9rem;
       line-height: 1;
@@ -886,6 +1105,7 @@
 
     .about-highlight h3 {
       margin: 18px 0 8px;
+
       font-family: var(--serif);
       font-size: 1.34rem;
       line-height: 1.05;
@@ -893,7 +1113,9 @@
 
     .about-highlight p {
       margin: 0;
+
       color: var(--muted);
+
       font-size: 0.82rem;
       line-height: 1.55;
     }
@@ -903,29 +1125,39 @@
     ========================================================= */
     .experience {
       overflow: hidden;
+
       color: var(--white);
+
       background:
         linear-gradient(
           120deg,
           rgba(6, 19, 13, 0.97),
           rgba(20, 52, 40, 0.91)
         ),
-        url("https://i.pinimg.com/736x/f6/33/48/f6334826491861572c8e532a6a099cdc.jpg")
+        url(
+          "https://i.pinimg.com/736x/f6/33/48/f6334826491861572c8e532a6a099cdc.jpg"
+        )
         center / cover fixed;
     }
 
     .experience::before {
       width: 650px;
       height: 650px;
+
       position: absolute;
       top: -330px;
       left: -300px;
+
       content: "";
-      border: 1px solid rgba(229, 206, 162, 0.14);
+
+      border:
+        1px solid rgba(230, 206, 160, 0.14);
+
       border-radius: 50%;
+
       box-shadow:
-        0 0 0 90px rgba(229, 206, 162, 0.025),
-        0 0 0 180px rgba(229, 206, 162, 0.018);
+        0 0 0 90px rgba(230, 206, 160, 0.025),
+        0 0 0 180px rgba(230, 206, 160, 0.018);
     }
 
     .experience .lead {
@@ -935,14 +1167,22 @@
     .experience-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      border-top: 1px solid rgba(255, 255, 255, 0.12);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+      border-top:
+        1px solid rgba(255, 255, 255, 0.12);
+
+      border-bottom:
+        1px solid rgba(255, 255, 255, 0.12);
     }
 
     .experience-step {
       min-height: 355px;
+
       padding: 42px 31px 35px;
-      border-right: 1px solid rgba(255, 255, 255, 0.12);
+
+      border-right:
+        1px solid rgba(255, 255, 255, 0.12);
+
       transition: background 300ms ease;
     }
 
@@ -956,8 +1196,11 @@
 
     .step-number {
       display: block;
+
       margin-bottom: 70px;
+
       color: var(--gold-light);
+
       font-family: var(--serif);
       font-size: 1.3rem;
     }
@@ -965,25 +1208,32 @@
     .step-icon {
       width: 54px;
       height: 54px;
+
       display: grid;
       place-items: center;
+
       margin-bottom: 25px;
-      border: 1px solid rgba(229, 206, 162, 0.34);
+
+      border:
+        1px solid rgba(230, 206, 160, 0.34);
+
       border-radius: 50%;
     }
 
     .step-icon svg {
       width: 25px;
       height: 25px;
+
       fill: none;
       stroke: var(--gold-light);
+      stroke-width: 1.35;
       stroke-linecap: round;
       stroke-linejoin: round;
-      stroke-width: 1.35;
     }
 
     .experience-step h3 {
       margin: 0 0 13px;
+
       font-family: var(--serif);
       font-size: 1.65rem;
       font-weight: 600;
@@ -991,7 +1241,9 @@
 
     .experience-step p {
       margin: 0;
+
       color: rgba(255, 255, 255, 0.62);
+
       font-size: 0.89rem;
     }
 
@@ -999,420 +1251,600 @@
        SERVICES
     ========================================================= */
     .services {
+      overflow: hidden;
+
+      color: var(--white);
+
       background:
-        linear-gradient(
-          rgba(248, 244, 235, 0.94),
-          rgba(248, 244, 235, 0.94)
+        radial-gradient(
+          circle at 90% 5%,
+          rgba(198, 162, 99, 0.19),
+          transparent 31rem
         ),
         radial-gradient(
-          circle at 80% 5%,
-          rgba(199, 163, 100, 0.16),
+          circle at -8% 76%,
+          rgba(41, 79, 64, 0.52),
           transparent 34rem
-        );
+        ),
+        var(--forest-950);
     }
 
-    .service-stack {
-      display: grid;
-      gap: 34px;
-    }
+    .services::before {
+      width: 440px;
+      height: 440px;
 
-    .service-card {
-      display: grid;
-      grid-template-columns:
-        minmax(0, 0.96fr)
-        minmax(0, 1.04fr);
-      overflow: hidden;
-      border: 1px solid rgba(18, 38, 31, 0.1);
-      border-radius: var(--radius-lg);
-      background: rgba(255, 253, 250, 0.92);
-      box-shadow: 0 22px 60px rgba(9, 29, 21, 0.08);
-      transition:
-        transform 300ms ease,
-        box-shadow 300ms ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow);
-    }
-
-    .service-card:nth-child(even) .service-media {
-      order: 2;
-    }
-
-    .service-media {
-      min-height: 520px;
-      position: relative;
-      overflow: hidden;
-      background: var(--forest-800);
-    }
-
-    .media-carousel,
-    .media-slide {
       position: absolute;
-      inset: 0;
-    }
+      top: 110px;
+      right: -285px;
 
-    .media-slide {
-      opacity: 0;
-      transform: scale(1.025);
-      transition:
-        opacity 750ms ease,
-        transform 1.2s ease;
-    }
-
-    .media-slide.is-active {
-      z-index: 1;
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    .media-slide::after {
-      position: absolute;
-      inset: 0;
       content: "";
-      background:
-        linear-gradient(
-          180deg,
-          transparent 45%,
-          rgba(4, 18, 12, 0.48)
-        );
+
+      border:
+        1px solid rgba(230, 206, 160, 0.13);
+
+      border-radius: 50%;
+
+      box-shadow:
+        0 0 0 75px rgba(230, 206, 160, 0.025),
+        0 0 0 150px rgba(230, 206, 160, 0.018);
+
       pointer-events: none;
     }
 
-    .media-slide img {
-      transition: transform 8s ease;
+    .services .container {
+      position: relative;
+      z-index: 1;
     }
 
-    .media-slide.is-active img {
-      transform: scale(1.035);
-    }
-
-    .carousel-controls {
-      z-index: 4;
-      position: absolute;
-      right: 22px;
-      bottom: 21px;
-      display: flex;
-      gap: 8px;
-    }
-
-    .carousel-button {
-      width: 42px;
-      height: 42px;
+    .services-intro {
       display: grid;
-      place-items: center;
-      padding: 0;
-      color: var(--white);
-      border: 1px solid rgba(255, 255, 255, 0.32);
-      border-radius: 50%;
-      cursor: pointer;
-      background: rgba(7, 25, 18, 0.45);
-      backdrop-filter: blur(10px);
+      grid-template-columns:
+        minmax(0, 1.25fr)
+        minmax(280px, 0.75fr);
+
+      align-items: end;
+      gap: 58px;
+
+      margin-bottom: clamp(48px, 7vw, 78px);
     }
 
-    .carousel-button:hover {
-      border-color: var(--gold-light);
-      background: rgba(7, 25, 18, 0.72);
+    .services-intro .section-title {
+      max-width: 770px;
     }
 
-    .carousel-button svg {
-      width: 16px;
-      height: 16px;
-      fill: none;
-      stroke: currentColor;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      stroke-width: 2;
+    .services-intro .lead {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.61);
     }
 
-    .media-dots {
-      z-index: 4;
+    .service-feature {
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1.04fr)
+        minmax(0, 0.96fr);
+
+      overflow: hidden;
+
+      color: var(--text);
+
+      border:
+        1px solid rgba(230, 206, 160, 0.22);
+
+      border-radius: var(--radius-lg);
+
+      background: var(--white);
+
+      box-shadow: var(--shadow-dark);
+    }
+
+    .service-feature-media {
+      min-height: 620px;
+
+      position: relative;
+      overflow: hidden;
+
+      background: var(--forest-800);
+    }
+
+    .service-feature-media::after,
+    .menu-card-media::after {
       position: absolute;
-      bottom: 37px;
-      left: 25px;
-      display: flex;
-      gap: 7px;
+      inset: 0;
+
+      content: "";
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(6, 19, 14, 0.04) 30%,
+          rgba(6, 19, 14, 0.62) 100%
+        );
+
+      pointer-events: none;
     }
 
-    .media-dot {
-      width: 7px;
-      height: 7px;
-      padding: 0;
-      border: 0;
-      border-radius: 999px;
-      cursor: pointer;
-      background: rgba(255, 255, 255, 0.42);
+    .service-feature-media img,
+    .menu-card-media img {
       transition:
-        width 220ms ease,
-        background 220ms ease;
+        transform 700ms ease,
+        filter 700ms ease;
     }
 
-    .media-dot.is-active {
-      width: 25px;
+    .service-feature:hover
+    .service-feature-media img,
+    .menu-card:hover
+    .menu-card-media img {
+      transform: scale(1.035);
+      filter: saturate(0.92);
+    }
+
+    .service-index,
+    .menu-card-index {
+      position: absolute;
+      z-index: 2;
+      top: 22px;
+      left: 22px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      color: var(--forest-950);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.35);
+
+      border-radius: 999px;
+
+      background:
+        rgba(230, 206, 160, 0.94);
+
+      box-shadow:
+        0 10px 28px rgba(4, 18, 12, 0.18);
+
+      font-size: 0.63rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+    }
+
+    .service-index {
+      min-width: 92px;
+      min-height: 34px;
+      padding: 8px 13px;
+    }
+
+    .menu-card-index {
+      width: 35px;
+      height: 35px;
+    }
+
+    .service-feature-caption {
+      position: absolute;
+      z-index: 2;
+      right: 26px;
+      bottom: 24px;
+      left: 26px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+
+      color: rgba(255, 255, 255, 0.86);
+
+      font-size: 0.64rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .service-feature-caption::after {
+      width: 62px;
+      height: 1px;
+
+      flex-shrink: 0;
+
+      content: "";
       background: var(--gold-light);
     }
 
-    .is-single .carousel-controls,
-    .is-single .media-dots {
-      display: none;
-    }
-
-    .service-art {
-      height: 100%;
-      position: relative;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      color: var(--white);
-      background:
-        radial-gradient(
-          circle at 72% 24%,
-          rgba(229, 206, 162, 0.22),
-          transparent 20rem
-        ),
-        linear-gradient(
-          145deg,
-          #23483a,
-          #0c2119 72%
-        );
-    }
-
-    .service-art::before,
-    .service-art::after {
-      position: absolute;
-      content: "";
-      border: 1px solid rgba(229, 206, 162, 0.18);
-      border-radius: 50%;
-    }
-
-    .service-art::before {
-      width: 430px;
-      height: 430px;
-      top: -185px;
-      right: -150px;
-    }
-
-    .service-art::after {
-      width: 270px;
-      height: 270px;
-      bottom: -150px;
-      left: -100px;
-    }
-
-    .service-art svg {
-      width: min(67%, 340px);
-      height: auto;
-      position: relative;
-      z-index: 2;
-      overflow: visible;
-      fill: none;
-      stroke: var(--gold-light);
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      stroke-width: 1.5;
-      filter: drop-shadow(0 18px 35px rgba(0, 0, 0, 0.18));
-    }
-
-    .art-caption {
-      z-index: 3;
-      position: absolute;
-      right: 28px;
-      bottom: 26px;
-      left: 28px;
+    .service-feature-copy {
       display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      padding: clamp(40px, 5.6vw, 72px);
+    }
+
+    .service-label {
+      display: inline-flex;
       align-items: center;
-      gap: 20px;
-      color: rgba(255, 255, 255, 0.72);
-      font-size: 0.64rem;
+      gap: 11px;
+
+      margin-bottom: 15px;
+
+      color: var(--gold-dark);
+
+      font-size: 0.65rem;
       font-weight: 700;
       letter-spacing: 0.15em;
       text-transform: uppercase;
     }
 
-    .art-caption::before {
-      flex: 1;
-      height: 1px;
-      content: "";
-      background:
-        linear-gradient(
-          90deg,
-          rgba(229, 206, 162, 0.65),
-          transparent
-        );
-    }
-
-    .service-content {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: clamp(36px, 5vw, 65px);
-    }
-
-    .service-kicker {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 16px;
-      color: var(--gold);
-      font-size: 0.66rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .service-kicker::before {
+    .service-label::before {
       width: 28px;
       height: 1px;
+
       content: "";
       background: currentColor;
     }
 
-    .service-content h3 {
+    .service-feature h3,
+    .menu-card h3 {
       margin: 0;
+
       font-family: var(--serif);
-      font-size: clamp(2.35rem, 4.3vw, 4rem);
       font-weight: 600;
       letter-spacing: -0.035em;
       line-height: 0.98;
     }
 
-    .service-description {
+    .service-feature h3 {
+      font-size: clamp(3rem, 5.7vw, 5rem);
+    }
+
+    .service-feature-copy > p {
       margin: 22px 0 0;
       color: var(--muted);
-      font-size: 0.95rem;
     }
 
-    .service-benefits {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin-top: 23px;
-    }
-
-    .benefit-chip {
-      padding: 8px 12px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--forest-700);
-      background: rgba(238, 229, 214, 0.34);
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.03em;
-    }
-
-    .price-list {
+    .feature-price-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 10px;
+
       margin-top: 30px;
     }
 
-    .price-item {
-      min-height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 15px 18px;
+    .feature-price {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 12px;
+
+      padding: 17px 18px;
+
       border: 1px solid var(--line);
-      border-radius: 13px;
-      background: rgba(248, 244, 235, 0.65);
+      border-radius: var(--radius-sm);
+
+      background: rgba(238, 229, 214, 0.32);
     }
 
-    .price-item span {
+    .feature-price span,
+    .menu-price-row span {
       color: var(--muted);
-      font-size: 0.77rem;
+
+      font-size: 0.68rem;
       font-weight: 700;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
     }
 
-    .price-item strong {
+    .feature-price strong,
+    .menu-price-row strong {
       color: var(--text);
+
       font-family: var(--serif);
-      font-size: 1.7rem;
       font-weight: 600;
-      line-height: 1;
+      line-height: 0.9;
     }
 
-    .service-book {
-      margin-top: 29px;
+    .feature-price strong {
+      font-size: 1.9rem;
+    }
+
+    .feature-book {
       align-self: flex-start;
+      margin-top: 30px;
     }
 
-    .addon-panel {
+    .service-menu-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+
+      margin-top: 24px;
+    }
+
+    .menu-card {
+      min-height: 100%;
+
+      display: grid;
+      grid-template-rows: 310px 1fr;
+
+      overflow: hidden;
+
+      color: var(--text);
+
+      border:
+        1px solid rgba(230, 206, 160, 0.2);
+
+      border-radius: var(--radius-md);
+
+      background: var(--white);
+
+      box-shadow:
+        0 20px 55px rgba(2, 13, 8, 0.22);
+
+      transition:
+        transform 280ms ease,
+        box-shadow 280ms ease;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-5px);
+
+      box-shadow:
+        0 28px 72px rgba(2, 13, 8, 0.32);
+    }
+
+    .menu-card-media {
+      position: relative;
+      overflow: hidden;
+
+      background: var(--forest-800);
+    }
+
+    .menu-card--thai img {
+      object-position: center 49%;
+    }
+
+    .menu-card--couples img {
+      object-position: center 45%;
+    }
+
+    .menu-card--pregnancy img {
+      object-position: center 48%;
+    }
+
+    .menu-card--cbd img {
+      object-position: center 54%;
+    }
+
+    .menu-card-body {
+      display: flex;
+      flex-direction: column;
+
+      padding: clamp(28px, 4vw, 40px);
+    }
+
+    .menu-card h3 {
+      font-size: clamp(2.15rem, 4vw, 3.2rem);
+    }
+
+    .menu-card-description {
+      margin: 16px 0 0;
+
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .menu-price-list {
+      display: grid;
+      gap: 0;
+
+      margin-top: 25px;
+
+      border-top: 1px solid var(--line);
+    }
+
+    .menu-price-row {
+      min-height: 60px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    .menu-price-row strong {
+      font-size: 1.7rem;
+    }
+
+    .menu-book {
+      width: 100%;
+      margin-top: 26px;
+    }
+
+    .service-addons {
       display: grid;
       grid-template-columns:
         minmax(0, 1fr)
-        auto
-        auto;
+        repeat(2, minmax(155px, 0.28fr));
+
       align-items: center;
-      gap: 28px;
+      gap: 16px;
+
+      margin-top: 24px;
       padding: clamp(28px, 5vw, 48px);
-      color: var(--white);
+
+      color: var(--forest-950);
+
+      border:
+        1px solid rgba(230, 206, 160, 0.34);
+
       border-radius: var(--radius-md);
+
       background:
-        radial-gradient(
-          circle at 10% 0%,
-          rgba(229, 206, 162, 0.12),
-          transparent 22rem
-        ),
-        var(--forest-900);
-      box-shadow: var(--shadow);
+        linear-gradient(
+          115deg,
+          var(--gold-light),
+          var(--gold) 72%,
+          #b78d4f
+        );
+
+      box-shadow: var(--shadow-dark);
     }
 
-    .addon-panel h3 {
-      margin: 5px 0 0;
+    .service-addons-copy {
+      padding-right: 26px;
+    }
+
+    .service-addons .service-label {
+      margin-bottom: 10px;
+      color: rgba(6, 19, 14, 0.68);
+    }
+
+    .service-addons h3 {
+      margin: 0;
+
       font-family: var(--serif);
-      font-size: clamp(2rem, 4vw, 3rem);
+      font-size: clamp(2rem, 4vw, 3.3rem);
       font-weight: 600;
-      line-height: 1;
+      letter-spacing: -0.035em;
+      line-height: 0.95;
     }
 
-    .addon-panel p {
-      max-width: 580px;
-      margin: 14px 0 0;
-      color: rgba(255, 255, 255, 0.62);
-      font-size: 0.87rem;
+    .service-addons p {
+      max-width: 570px;
+      margin: 13px 0 0;
+
+      color: rgba(6, 19, 14, 0.68);
+      font-size: 0.84rem;
     }
 
-    .addon-price {
-      min-width: 150px;
-      padding: 22px 25px;
-      border: 1px solid rgba(255, 255, 255, 0.13);
+    .addon-choice {
+      min-height: 116px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      padding: 20px 22px;
+
+      border:
+        1px solid rgba(6, 19, 14, 0.16);
+
       border-radius: var(--radius-sm);
-      background: rgba(255, 255, 255, 0.05);
+
+      background:
+        rgba(255, 253, 250, 0.38);
     }
 
-    .addon-price span {
-      display: block;
-      color: rgba(255, 255, 255, 0.6);
-      font-size: 0.69rem;
+    .addon-choice span {
+      color: rgba(6, 19, 14, 0.65);
+
+      font-size: 0.68rem;
       font-weight: 700;
       letter-spacing: 0.09em;
       text-transform: uppercase;
     }
 
-    .addon-price strong {
-      display: block;
+    .addon-choice strong {
       margin-top: 7px;
-      color: var(--gold-light);
+
       font-family: var(--serif);
-      font-size: 2rem;
+      font-size: 2.15rem;
       font-weight: 600;
       line-height: 1;
     }
 
-    .pricing-note {
-      margin: 24px 0 0;
-      color: var(--muted);
-      font-size: 0.77rem;
+    .services .pricing-note {
+      margin: 24px auto 0;
+
+      color: rgba(255, 255, 255, 0.5);
+
+      font-size: 0.74rem;
       text-align: center;
     }
 
+    @media (max-width: 1050px) {
+      .services-intro {
+        grid-template-columns: 1fr;
+        align-items: start;
+        gap: 24px;
+      }
+
+      .service-feature {
+        grid-template-columns: 1fr;
+      }
+
+      .service-feature-media {
+        min-height: 500px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .service-feature {
+        border-radius: 24px;
+      }
+
+      .service-feature-media {
+        min-height: 400px;
+      }
+
+      .service-feature-copy {
+        padding: 34px 24px 38px;
+      }
+
+      .feature-price-grid,
+      .service-menu-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-book {
+        width: 100%;
+      }
+
+      .menu-card {
+        grid-template-rows: 270px 1fr;
+      }
+
+      .menu-card-body {
+        padding: 30px 24px 34px;
+      }
+
+      .service-addons {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 30px 24px;
+      }
+
+      .service-addons-copy {
+        grid-column: 1 / -1;
+        padding-right: 0;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .service-feature-media {
+        min-height: 340px;
+      }
+
+      .feature-price-grid {
+        gap: 8px;
+      }
+
+      .feature-price {
+        padding: 15px;
+      }
+
+      .menu-card {
+        grid-template-rows: 235px 1fr;
+      }
+
+      .service-addons {
+        grid-template-columns: 1fr;
+      }
+
+      .service-addons-copy {
+        grid-column: auto;
+      }
+    }
+
     /* =========================================================
-       GALLERY
+       ATMOSPHERE GALLERY
     ========================================================= */
     .gallery {
       overflow: hidden;
@@ -1421,18 +1853,31 @@
 
     .gallery-grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.8fr 1.05fr;
-      grid-template-rows: 285px 210px 285px;
+      grid-template-columns:
+        1.15fr
+        0.8fr
+        1.05fr;
+
+      grid-template-rows:
+        285px
+        210px
+        285px;
+
       gap: 17px;
     }
 
     .gallery-item {
       position: relative;
+
       overflow: hidden;
       margin: 0;
+
       border-radius: var(--radius-md);
+
       background: var(--forest-800);
-      box-shadow: 0 16px 42px rgba(7, 25, 18, 0.09);
+
+      box-shadow:
+        0 16px 42px rgba(7, 25, 18, 0.09);
     }
 
     .gallery-item:nth-child(1) {
@@ -1471,27 +1916,31 @@
     .gallery-item::after {
       position: absolute;
       inset: 0;
+
       content: "";
+
       background:
         linear-gradient(
           180deg,
           transparent 52%,
-          rgba(5, 20, 14, 0.66)
+          rgba(5, 20, 14, 0.67)
         );
     }
 
     .gallery-caption {
-      z-index: 2;
       position: absolute;
+      z-index: 2;
       right: 22px;
       bottom: 20px;
       left: 22px;
+
       color: var(--white);
     }
 
     .gallery-caption span {
       color: var(--gold-light);
-      font-size: 0.61rem;
+
+      font-size: 0.6rem;
       font-weight: 700;
       letter-spacing: 0.15em;
       text-transform: uppercase;
@@ -1499,6 +1948,7 @@
 
     .gallery-caption h3 {
       margin: 5px 0 0;
+
       font-family: var(--serif);
       font-size: 1.45rem;
       font-weight: 600;
@@ -1506,7 +1956,7 @@
     }
 
     /* =========================================================
-       SETMORE BOOKING SECTION
+       BOOKING
     ========================================================= */
     .booking {
       overflow: hidden;
@@ -1516,77 +1966,99 @@
     .booking::before {
       width: 620px;
       height: 620px;
+
       position: absolute;
       right: -340px;
       bottom: -330px;
+
       content: "";
-      border: 1px solid rgba(199, 163, 100, 0.17);
+
+      border:
+        1px solid rgba(198, 162, 99, 0.17);
+
       border-radius: 50%;
+
       box-shadow:
-        0 0 0 90px rgba(199, 163, 100, 0.035),
-        0 0 0 180px rgba(199, 163, 100, 0.02);
+        0 0 0 90px rgba(198, 162, 99, 0.035),
+        0 0 0 180px rgba(198, 162, 99, 0.02);
     }
 
     .booking-shell {
       min-height: 650px;
+
       display: grid;
       grid-template-columns:
         minmax(0, 0.95fr)
         minmax(0, 1.05fr);
+
       overflow: hidden;
+
       border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-dark);
+
       background: var(--white);
+      box-shadow: var(--shadow-dark);
     }
 
     .booking-image {
       min-height: 650px;
+
       position: relative;
+
       overflow: hidden;
+
       background: var(--forest-900);
     }
 
     .booking-image img {
-      filter: saturate(0.74) contrast(1.03);
+      filter:
+        saturate(0.74)
+        contrast(1.03);
     }
 
     .booking-image::after {
       position: absolute;
       inset: 0;
+
       content: "";
+
       background:
         linear-gradient(
           180deg,
-          rgba(6, 20, 14, 0.1),
-          rgba(6, 20, 14, 0.66)
+          rgba(6, 20, 14, 0.08),
+          rgba(6, 20, 14, 0.69)
         ),
         radial-gradient(
           circle at 70% 20%,
-          rgba(229, 206, 162, 0.16),
+          rgba(230, 206, 160, 0.17),
           transparent 24rem
         );
     }
 
     .booking-image-copy {
-      z-index: 2;
       position: absolute;
+      z-index: 2;
+
       right: 38px;
       bottom: 40px;
       left: 38px;
+
       color: var(--white);
     }
 
     .booking-image-copy span {
       color: var(--gold-light);
-      font-size: 0.66rem;
+
+      font-size: 0.65rem;
       font-weight: 700;
       letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
     .booking-image-copy h3 {
-      max-width: 460px;
+      max-width: 470px;
+
       margin: 10px 0 0;
+
       font-family: var(--serif);
       font-size: clamp(2.1rem, 4vw, 3.4rem);
       font-weight: 600;
@@ -1597,11 +2069,13 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+
       padding: clamp(42px, 7vw, 82px);
     }
 
     .booking-content h2 {
       margin: 0;
+
       font-family: var(--serif);
       font-size: clamp(2.9rem, 5.2vw, 4.9rem);
       font-weight: 600;
@@ -1617,6 +2091,7 @@
     .booking-steps {
       display: grid;
       gap: 12px;
+
       margin-top: 32px;
     }
 
@@ -1625,24 +2100,33 @@
       grid-template-columns: 38px 1fr;
       align-items: center;
       gap: 14px;
+
       padding: 15px 0;
+
       border-bottom: 1px solid var(--line);
     }
 
     .booking-step-number {
       width: 38px;
       height: 38px;
+
       display: grid;
       place-items: center;
+
       color: var(--gold);
-      border: 1px solid rgba(199, 163, 100, 0.38);
+
+      border:
+        1px solid rgba(198, 162, 99, 0.38);
+
       border-radius: 50%;
+
       font-family: var(--serif);
       font-size: 1.05rem;
     }
 
     .booking-step strong {
       display: block;
+
       font-family: var(--serif);
       font-size: 1.18rem;
       line-height: 1.1;
@@ -1650,9 +2134,12 @@
 
     .booking-step span {
       display: block;
+
       margin-top: 4px;
+
       color: var(--muted);
-      font-size: 0.78rem;
+
+      font-size: 0.77rem;
     }
 
     .booking-actions {
@@ -1660,13 +2147,16 @@
       flex-wrap: wrap;
       align-items: center;
       gap: 14px;
+
       margin-top: 34px;
     }
 
     .booking-note {
-      margin-top: 18px;
+      margin: 18px 0 0;
+
       color: var(--muted);
-      font-size: 0.74rem;
+
+      font-size: 0.73rem;
     }
 
     /* =========================================================
@@ -1674,6 +2164,7 @@
     ========================================================= */
     .reviews {
       overflow: hidden;
+
       color: var(--white);
       background: var(--forest-950);
     }
@@ -1681,14 +2172,20 @@
     .reviews::before {
       width: 560px;
       height: 560px;
+
       position: absolute;
       top: -340px;
       right: 8%;
+
       content: "";
-      border: 1px solid rgba(229, 206, 162, 0.1);
+
+      border:
+        1px solid rgba(230, 206, 160, 0.1);
+
       border-radius: 50%;
+
       box-shadow:
-        0 0 0 100px rgba(229, 206, 162, 0.018);
+        0 0 0 100px rgba(230, 206, 160, 0.018);
     }
 
     .reviews .lead {
@@ -1697,16 +2194,22 @@
 
     .review-note {
       max-width: 740px;
+
       margin: -48px auto 42px;
+
       color: rgba(255, 255, 255, 0.45);
-      font-size: 0.69rem;
+
+      font-size: 0.68rem;
       text-align: center;
     }
 
     .review-marquee {
       width: 100%;
+
       overflow: hidden;
+
       margin-top: 18px;
+
       mask-image:
         linear-gradient(
           90deg,
@@ -1719,10 +2222,14 @@
 
     .review-track {
       width: max-content;
+
       display: flex;
       gap: 18px;
+
       padding: 5px 0;
-      animation: marquee-left 50s linear infinite;
+
+      animation:
+        marquee-left 50s linear infinite;
     }
 
     .review-marquee--reverse .review-track {
@@ -1737,28 +2244,38 @@
     .review-card {
       width: min(390px, 78vw);
       min-height: 230px;
+
       flex: 0 0 auto;
+
       padding: 29px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.1);
+
       border-radius: var(--radius-md);
+
       background:
         linear-gradient(
           145deg,
           rgba(255, 255, 255, 0.075),
           rgba(255, 255, 255, 0.025)
         );
+
       backdrop-filter: blur(10px);
     }
 
     .review-stars {
       color: var(--gold-light);
-      font-size: 0.71rem;
+
+      font-size: 0.7rem;
       letter-spacing: 0.2em;
     }
 
     .review-card blockquote {
       margin: 20px 0 28px;
+
       color: rgba(255, 255, 255, 0.83);
+
       font-family: var(--serif);
       font-size: 1.25rem;
       line-height: 1.32;
@@ -1768,8 +2285,10 @@
       display: flex;
       align-items: center;
       gap: 11px;
+
       color: rgba(255, 255, 255, 0.48);
-      font-size: 0.66rem;
+
+      font-size: 0.65rem;
       font-weight: 700;
       letter-spacing: 0.09em;
       text-transform: uppercase;
@@ -1778,24 +2297,31 @@
     .review-avatar {
       width: 32px;
       height: 32px;
+
       display: grid;
       place-items: center;
+
       color: var(--forest-950);
+
       border-radius: 50%;
+
       background: var(--gold-light);
+
       font-family: var(--serif);
       font-size: 1rem;
     }
 
     @keyframes marquee-left {
       to {
-        transform: translateX(calc(-50% - 9px));
+        transform:
+          translateX(calc(-50% - 9px));
       }
     }
 
     @keyframes marquee-right {
       from {
-        transform: translateX(calc(-50% - 9px));
+        transform:
+          translateX(calc(-50% - 9px));
       }
 
       to {
@@ -1811,12 +2337,14 @@
       grid-template-columns:
         minmax(0, 0.72fr)
         minmax(0, 1.28fr);
+
       gap: clamp(45px, 9vw, 120px);
     }
 
     .faq-intro {
       position: sticky;
       top: calc(var(--header-height) + 35px);
+
       align-self: start;
     }
 
@@ -1834,14 +2362,19 @@
 
     .faq-question {
       width: 100%;
+
       display: grid;
       grid-template-columns: 1fr 42px;
       align-items: center;
       gap: 25px;
+
       padding: 27px 0;
+
       border: 0;
+
       cursor: pointer;
       text-align: left;
+
       background: transparent;
     }
 
@@ -1855,9 +2388,12 @@
     .faq-toggle {
       width: 40px;
       height: 40px;
+
       position: relative;
+
       border: 1px solid var(--line);
       border-radius: 50%;
+
       transition:
         border-color 200ms ease,
         background 200ms ease;
@@ -1867,38 +2403,53 @@
     .faq-toggle::after {
       width: 14px;
       height: 1px;
+
       position: absolute;
       top: 50%;
       left: 50%;
+
       content: "";
+
       background: var(--text);
+
       transform: translate(-50%, -50%);
+
       transition: transform 240ms ease;
     }
 
     .faq-toggle::after {
-      transform: translate(-50%, -50%) rotate(90deg);
+      transform:
+        translate(-50%, -50%)
+        rotate(90deg);
     }
 
-    .faq-question[aria-expanded="true"] .faq-toggle {
+    .faq-question[aria-expanded="true"]
+    .faq-toggle {
       border-color: var(--gold);
-      background: rgba(199, 163, 100, 0.1);
+      background: rgba(198, 162, 99, 0.1);
     }
 
-    .faq-question[aria-expanded="true"] .faq-toggle::after {
-      transform: translate(-50%, -50%) rotate(0deg);
+    .faq-question[aria-expanded="true"]
+    .faq-toggle::after {
+      transform:
+        translate(-50%, -50%)
+        rotate(0deg);
     }
 
     .faq-answer {
       max-height: 0;
       overflow: hidden;
+
       transition: max-height 350ms ease;
     }
 
     .faq-answer-inner {
       max-width: 720px;
+
       padding: 0 65px 28px 0;
+
       color: var(--muted);
+
       font-size: 0.92rem;
     }
 
@@ -1911,25 +2462,31 @@
 
     .contact-shell {
       min-height: 620px;
+
       display: grid;
       grid-template-columns:
         minmax(0, 0.85fr)
         minmax(0, 1.15fr);
+
       overflow: hidden;
+
       border-radius: var(--radius-lg);
-      box-shadow: var(--shadow);
+
       background: var(--white);
+      box-shadow: var(--shadow);
     }
 
     .contact-copy {
       display: flex;
       flex-direction: column;
       justify-content: center;
+
       padding: clamp(40px, 6vw, 78px);
     }
 
     .contact-copy h2 {
       margin: 0;
+
       font-family: var(--serif);
       font-size: clamp(2.8rem, 5vw, 4.8rem);
       font-weight: 600;
@@ -1944,7 +2501,9 @@
 
     .contact-details {
       display: grid;
+
       margin-top: 36px;
+
       border-top: 1px solid var(--line);
     }
 
@@ -1952,13 +2511,16 @@
       display: grid;
       grid-template-columns: 110px 1fr;
       gap: 20px;
+
       padding: 20px 0;
+
       border-bottom: 1px solid var(--line);
     }
 
     .contact-detail strong {
       color: var(--gold);
-      font-size: 0.66rem;
+
+      font-size: 0.65rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
     }
@@ -1971,38 +2533,55 @@
 
     .map-wrap {
       min-height: 620px;
+
       position: relative;
+
       background: #d8d7cf;
     }
 
     .map-wrap iframe {
       width: 100%;
       height: 100%;
+
       position: absolute;
       inset: 0;
+
       border: 0;
-      filter: saturate(0.65) contrast(0.95);
+
+      filter:
+        saturate(0.65)
+        contrast(0.95);
     }
 
     .map-badge {
-      z-index: 3;
       position: absolute;
+      z-index: 3;
+
       right: 22px;
       bottom: 22px;
       left: 22px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 15px;
+
       padding: 17px 19px;
+
       border-radius: 14px;
-      background: rgba(255, 253, 250, 0.93);
-      box-shadow: 0 12px 35px rgba(5, 20, 14, 0.16);
+
+      background:
+        rgba(255, 253, 250, 0.93);
+
+      box-shadow:
+        0 12px 35px rgba(5, 20, 14, 0.16);
+
       backdrop-filter: blur(14px);
     }
 
     .map-badge strong {
       display: block;
+
       font-family: var(--serif);
       font-size: 1.24rem;
       line-height: 1;
@@ -2010,16 +2589,21 @@
 
     .map-badge span {
       display: block;
+
       margin-top: 5px;
+
       color: var(--muted);
+
       font-size: 0.67rem;
     }
 
     .map-badge .btn {
       min-height: 44px;
       flex-shrink: 0;
+
       padding: 10px 16px;
-      font-size: 0.65rem;
+
+      font-size: 0.64rem;
     }
 
     /* =========================================================
@@ -2032,22 +2616,32 @@
 
     .footer-main {
       display: grid;
-      grid-template-columns: 1.3fr 0.65fr 0.75fr;
+      grid-template-columns:
+        1.3fr
+        0.65fr
+        0.75fr;
+
       gap: 70px;
+
       padding: 75px 0 58px;
     }
 
     .footer-brand p {
       max-width: 420px;
+
       margin: 23px 0 0;
+
       color: rgba(255, 255, 255, 0.53);
+
       font-size: 0.87rem;
     }
 
     .footer-column h3 {
       margin: 0 0 20px;
+
       color: var(--gold-light);
-      font-size: 0.66rem;
+
+      font-size: 0.65rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
     }
@@ -2060,7 +2654,9 @@
     .footer-links a,
     .footer-links span {
       color: rgba(255, 255, 255, 0.62);
+
       font-size: 0.82rem;
+
       transition: color 200ms ease;
     }
 
@@ -2073,18 +2669,31 @@
       align-items: center;
       justify-content: space-between;
       gap: 20px;
+
       padding: 22px 0 28px;
+
       color: rgba(255, 255, 255, 0.38);
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      font-size: 0.66rem;
+
+      border-top:
+        1px solid rgba(255, 255, 255, 0.08);
+
+      font-size: 0.65rem;
     }
 
     /* =========================================================
-       SCROLL REVEAL
+       MOBILE FIXED BOOKING BUTTON
+    ========================================================= */
+    .mobile-booking-bar {
+      display: none;
+    }
+
+    /* =========================================================
+       SCROLL REVEALS
     ========================================================= */
     .reveal {
       opacity: 0;
       transform: translateY(30px);
+
       transition:
         opacity 800ms cubic-bezier(0.2, 0.75, 0.25, 1),
         transform 800ms cubic-bezier(0.2, 0.75, 0.25, 1);
@@ -2112,7 +2721,8 @@
     ========================================================= */
     @media (max-width: 1050px) {
       :root {
-        --container: min(100% - 34px, 900px);
+        --container:
+          min(100% - 34px, 900px);
       }
 
       .desktop-nav,
@@ -2126,44 +2736,64 @@
 
       .mobile-menu {
         max-height: 0;
+
         display: block;
+
         position: fixed;
         z-index: 999;
+
         top: var(--header-height);
         right: 0;
         left: 0;
+
         overflow: hidden;
+
         color: var(--text);
-        border-bottom: 1px solid rgba(18, 38, 31, 0.08);
-        background: rgba(248, 244, 235, 0.97);
-        box-shadow: 0 24px 45px rgba(7, 25, 18, 0.12);
+
+        border-bottom:
+          1px solid rgba(18, 38, 31, 0.08);
+
+        background:
+          rgba(248, 244, 235, 0.97);
+
+        box-shadow:
+          0 24px 45px rgba(7, 25, 18, 0.12);
+
         backdrop-filter: blur(18px);
+
         transition: max-height 350ms ease;
       }
 
       .mobile-menu.is-open {
-        max-height: calc(100svh - var(--header-height));
+        max-height:
+          calc(100svh - var(--header-height));
       }
 
       .mobile-menu-inner {
         width: var(--container);
+
         display: grid;
+
         margin-inline: auto;
         padding: 20px 0 30px;
       }
 
       .mobile-menu a {
         padding: 15px 4px;
+
         border-bottom: 1px solid var(--line);
+
         font-family: var(--serif);
         font-size: 1.55rem;
       }
 
       .mobile-menu .setmore-trigger {
         width: 100%;
+
         margin-top: 22px;
+
         font-family: var(--sans);
-        font-size: 0.71rem;
+        font-size: 0.7rem;
       }
 
       .section-heading {
@@ -2173,15 +2803,23 @@
       }
 
       .intro-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns:
+          repeat(3, 1fr);
       }
 
       .intro-message {
         grid-column: 1 / -1;
+
         min-height: 150px;
+
         padding-inline:
-          max(20px, calc((100vw - 900px) / 2));
+          max(
+            20px,
+            calc((100vw - 900px) / 2)
+          );
+
         border-right: 0;
+
         border-bottom:
           1px solid rgba(255, 255, 255, 0.09);
       }
@@ -2211,12 +2849,13 @@
         grid-template-columns: 1fr;
       }
 
-      .service-card:nth-child(even) .service-media {
+      .service-card:nth-child(even)
+      .service-media {
         order: initial;
       }
 
       .service-media {
-        min-height: 490px;
+        min-height: 520px;
       }
 
       .addon-panel {
@@ -2271,6 +2910,10 @@
         --header-height: 72px;
       }
 
+      body {
+        padding-bottom: 76px;
+      }
+
       .section {
         padding: 82px 0;
       }
@@ -2278,6 +2921,7 @@
       .brand-mark {
         width: 38px;
         height: 38px;
+
         font-size: 1.08rem;
       }
 
@@ -2290,30 +2934,31 @@
       }
 
       .hero {
-        min-height: 740px;
+        min-height: 760px;
       }
 
       .hero-overlay {
         background:
           linear-gradient(
             90deg,
-            rgba(4, 15, 11, 0.9),
-            rgba(4, 15, 11, 0.54)
+            rgba(4, 15, 11, 0.91),
+            rgba(4, 15, 11, 0.55)
           ),
           linear-gradient(
             180deg,
             rgba(3, 12, 9, 0.26),
             transparent 25%,
-            rgba(3, 12, 9, 0.8)
+            rgba(3, 12, 9, 0.81)
           );
       }
 
       .hero-content {
-        padding-bottom: 114px;
+        padding-bottom: 115px;
       }
 
       .hero .display-title {
-        font-size: clamp(3.5rem, 17vw, 5rem);
+        font-size:
+          clamp(3.5rem, 17vw, 5rem);
       }
 
       .hero-subtitle {
@@ -2321,18 +2966,18 @@
         line-height: 1.7;
       }
 
-      .hero-index {
+      .hero-dots {
         right: auto;
         bottom: 58px;
         left: 14px;
       }
 
-      .hero-booking-row {
+      .hero-actions {
         width: 100%;
       }
 
       #Anywhere_button_iframe.anywhere-book-now-button,
-      .hero-booking-row .btn {
+      .hero-actions .btn {
         width: 100% !important;
       }
 
@@ -2343,7 +2988,7 @@
 
       .trust-item {
         padding: 8px 10px;
-        font-size: 0.58rem;
+        font-size: 0.57rem;
       }
 
       .intro-grid {
@@ -2353,8 +2998,11 @@
       .intro-message,
       .intro-stat {
         min-height: auto;
+
         padding: 28px 22px;
+
         border-right: 0;
+
         border-bottom:
           1px solid rgba(255, 255, 255, 0.09);
       }
@@ -2390,6 +3038,7 @@
       .about-seal {
         width: 104px;
         height: 104px;
+
         right: 30%;
       }
 
@@ -2422,8 +3071,11 @@
       .experience-step,
       .experience-step:nth-child(2) {
         min-height: auto;
+
         padding: 31px 8px;
+
         border-right: 0;
+
         border-bottom:
           1px solid rgba(255, 255, 255, 0.12);
       }
@@ -2445,7 +3097,11 @@
       }
 
       .service-media {
-        min-height: 365px;
+        min-height: 430px;
+      }
+
+      .pinterest-visual {
+        height: 370px;
       }
 
       .service-content {
@@ -2466,6 +3122,7 @@
 
       .addon-panel {
         grid-template-columns: 1fr;
+
         padding: 30px 23px;
       }
 
@@ -2479,7 +3136,12 @@
 
       .gallery-grid {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 280px 210px 280px 220px;
+
+        grid-template-rows:
+          280px
+          210px
+          280px
+          220px;
       }
 
       .gallery-item:nth-child(1) {
@@ -2566,6 +3228,7 @@
       .footer-main {
         grid-template-columns: 1fr;
         gap: 38px;
+
         padding: 58px 0 42px;
       }
 
@@ -2576,6 +3239,74 @@
       .footer-bottom {
         align-items: flex-start;
         flex-direction: column;
+      }
+
+      .mobile-booking-bar {
+        height: 68px;
+
+        position: fixed;
+        z-index: 1100;
+
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        padding:
+          9px
+          max(12px, env(safe-area-inset-left))
+          calc(9px + env(safe-area-inset-bottom))
+          max(12px, env(safe-area-inset-right));
+
+        border-top:
+          1px solid rgba(230, 206, 160, 0.2);
+
+        background:
+          rgba(6, 19, 14, 0.94);
+
+        box-shadow:
+          0 -12px 35px rgba(2, 13, 8, 0.2);
+
+        backdrop-filter: blur(16px);
+      }
+
+      .mobile-booking-bar .setmore-trigger {
+        min-height: 48px;
+        flex: 1;
+      }
+
+      .mobile-call {
+        width: 48px;
+        height: 48px;
+
+        display: grid;
+        place-items: center;
+
+        flex-shrink: 0;
+
+        color: var(--white);
+
+        border:
+          1px solid rgba(255, 255, 255, 0.22);
+
+        border-radius: 50%;
+
+        background:
+          rgba(255, 255, 255, 0.07);
+      }
+
+      .mobile-call svg {
+        width: 20px;
+        height: 20px;
+
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
       }
     }
 
@@ -2591,10 +3322,18 @@
       }
 
       .service-media {
-        min-height: 320px;
+        min-height: 400px;
       }
 
-      .media-dots {
+      .service-slide--pinterest {
+        padding: 18px;
+      }
+
+      .pinterest-visual {
+        height: 350px;
+      }
+
+      .carousel-dots {
         bottom: 27px;
         left: 17px;
       }
@@ -2603,14 +3342,11 @@
         right: 15px;
         bottom: 13px;
       }
-
-      .art-caption {
-        right: 18px;
-        bottom: 20px;
-        left: 18px;
-      }
     }
 
+    /* =========================================================
+       REDUCED MOTION
+    ========================================================= */
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto;
@@ -2620,8 +3356,10 @@
       *::before,
       *::after {
         scroll-behavior: auto !important;
+
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
+
         transition-duration: 0.01ms !important;
       }
 
@@ -2638,6 +3376,7 @@
     "@type": "HealthAndBeautyBusiness",
     "name": "Massage ViVa Georgetown",
     "telephone": "+1-512-851-7665",
+    "url": "https://massagevivaui87.setmore.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "1401 Williams Dr Suite 1403-A",
@@ -2667,7 +3406,7 @@
         "closes": "19:00"
       }
     ],
-    "url": "https://massagevivaui87.setmore.com"
+    "priceRange": "$$"
   }
   </script>
 </head>
@@ -2683,7 +3422,9 @@
         href="#home"
         aria-label="Massage ViVa Georgetown home"
       >
-        <span class="brand-mark" aria-hidden="true">MV</span>
+        <span class="brand-mark" aria-hidden="true">
+          MV
+        </span>
 
         <span class="brand-copy">
           <strong>Massage ViVa</strong>
@@ -2691,14 +3432,37 @@
         </span>
       </a>
 
-      <nav class="desktop-nav" aria-label="Primary navigation">
-        <a class="nav-link is-active" href="#home">Home</a>
-        <a class="nav-link" href="#about">About</a>
-        <a class="nav-link" href="#services">Services</a>
-        <a class="nav-link" href="#experience">Experience</a>
-        <a class="nav-link" href="#reviews">Reviews</a>
-        <a class="nav-link" href="#faq">FAQ</a>
-        <a class="nav-link" href="#contact">Contact</a>
+      <nav
+        class="desktop-nav"
+        aria-label="Primary navigation"
+      >
+        <a class="nav-link is-active" href="#home">
+          Home
+        </a>
+
+        <a class="nav-link" href="#about">
+          About
+        </a>
+
+        <a class="nav-link" href="#services">
+          Services
+        </a>
+
+        <a class="nav-link" href="#experience">
+          Experience
+        </a>
+
+        <a class="nav-link" href="#reviews">
+          Reviews
+        </a>
+
+        <a class="nav-link" href="#faq">
+          FAQ
+        </a>
+
+        <a class="nav-link" href="#contact">
+          Contact
+        </a>
       </nav>
 
       <button
@@ -2717,7 +3481,7 @@
         aria-expanded="false"
         aria-controls="mobileMenu"
       >
-        <span class="menu-toggle-lines" aria-hidden="true">
+        <span class="menu-lines" aria-hidden="true">
           <span></span>
           <span></span>
           <span></span>
@@ -2816,15 +3580,12 @@
             meaningful relaxation.
           </p>
 
-          <div class="hero-booking-row">
-            <!--
-              Primary Setmore integration button.
-              This is the only button using the required Setmore ID.
-            -->
+          <div class="hero-actions">
+            <!-- Primary Setmore integration button -->
             <button
               style="
-                background-color: #c7a364;
-                color: #07130f;
+                background-color: #c6a263;
+                color: #06130e;
                 border: none;
                 padding: 15px 29px;
                 font-size: 14px;
@@ -2850,23 +3611,34 @@
             class="trust-strip"
             aria-label="Experience highlights"
           >
-            <span class="trust-item">Quiet Rooms</span>
-            <span class="trust-item">Private Atmosphere</span>
-            <span class="trust-item">Thoughtful Care</span>
-            <span class="trust-item">Easy Online Booking</span>
+            <span class="trust-item">
+              Quiet Rooms
+            </span>
+
+            <span class="trust-item">
+              Private Atmosphere
+            </span>
+
+            <span class="trust-item">
+              Thoughtful Details
+            </span>
+
+            <span class="trust-item">
+              Online Booking
+            </span>
           </div>
         </div>
       </div>
 
       <div
-        class="hero-index"
+        class="hero-dots"
         id="heroDots"
         aria-label="Hero image navigation"
       ></div>
     </section>
 
     <!-- =====================================================
-         INTRO BAND
+         INTRO
     ====================================================== -->
     <section
       class="intro-band"
@@ -2923,14 +3695,16 @@
           <div class="about-image about-image--top">
             <img
               src="https://i.pinimg.com/736x/8d/88/02/8d88021e4d32ed8abd1452b7f48ce00b.jpg"
-              alt="Relaxing private spa atmosphere"
+              alt="Relaxing and private spa atmosphere"
               loading="lazy"
               referrerpolicy="no-referrer"
             >
           </div>
 
           <div class="about-seal" aria-hidden="true">
-            <span>Pause · Breathe · Restore</span>
+            <span>
+              Pause · Breathe · Restore
+            </span>
           </div>
         </div>
 
@@ -2946,42 +3720,53 @@
           <div class="gold-rule reveal delay-1"></div>
 
           <p class="reveal delay-2">
-            Massage ViVa Georgetown is designed as a peaceful retreat
-            from everyday demands. The experience centers on privacy,
-            cleanliness, a quiet setting and enough time to settle in
-            without feeling rushed.
+            Massage ViVa Georgetown offers a peaceful place to step
+            away from everyday demands. The experience centers on
+            privacy, cleanliness, quiet surroundings and enough time
+            to settle in without feeling rushed.
           </p>
 
           <p class="reveal delay-2">
             From arrival through the final moments of your visit, the
-            atmosphere is intentionally simple and restful—allowing you
-            to slow down, release the day and focus on your own comfort.
+            atmosphere is intentionally simple and restful—allowing
+            you to slow down, leave the day outside and focus on your
+            own comfort.
           </p>
 
           <div class="about-highlights">
             <article class="about-highlight reveal">
-              <span class="highlight-number">01</span>
+              <span class="highlight-number">
+                01
+              </span>
+
               <h3>Quiet Setting</h3>
+
               <p>
-                A softer environment that supports uninterrupted rest.
+                A softer environment designed to support uninterrupted rest.
               </p>
             </article>
 
             <article class="about-highlight reveal delay-1">
-              <span class="highlight-number">02</span>
+              <span class="highlight-number">
+                02
+              </span>
+
               <h3>Private Comfort</h3>
+
               <p>
-                Personal space and a discreet experience from arrival
-                to finish.
+                Personal space and a discreet experience from arrival to finish.
               </p>
             </article>
 
             <article class="about-highlight reveal delay-2">
-              <span class="highlight-number">03</span>
+              <span class="highlight-number">
+                03
+              </span>
+
               <h3>Clean Details</h3>
+
               <p>
-                An orderly atmosphere prepared with comfort and care
-                in mind.
+                An orderly atmosphere prepared with comfort and care in mind.
               </p>
             </article>
           </div>
@@ -3007,14 +3792,16 @@
           </div>
 
           <p class="lead reveal delay-2">
-            A thoughtful flow helps you leave outside noise behind and
-            move naturally into a quieter, more comfortable state.
+            A thoughtful visit helps you leave outside noise behind
+            and move naturally into a quieter, more comfortable pace.
           </p>
         </div>
 
         <div class="experience-grid">
           <article class="experience-step reveal">
-            <span class="step-number">01</span>
+            <span class="step-number">
+              01
+            </span>
 
             <div class="step-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24">
@@ -3033,7 +3820,9 @@
           </article>
 
           <article class="experience-step reveal delay-1">
-            <span class="step-number">02</span>
+            <span class="step-number">
+              02
+            </span>
 
             <div class="step-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24">
@@ -3047,13 +3836,15 @@
             <h3>Clear Preferences</h3>
 
             <p>
-              Share your preferred service, session length and comfort
-              considerations before your appointment begins.
+              Share your preferred service, session length and
+              comfort considerations before the appointment begins.
             </p>
           </article>
 
           <article class="experience-step reveal delay-2">
-            <span class="step-number">03</span>
+            <span class="step-number">
+              03
+            </span>
 
             <div class="step-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24">
@@ -3064,6 +3855,7 @@
                   height="12"
                   rx="3"
                 ></rect>
+
                 <path d="M8 6V4M16 6V4M8 18v2M16 18v2"></path>
                 <path d="M8 12h8"></path>
               </svg>
@@ -3072,13 +3864,15 @@
             <h3>Private Space</h3>
 
             <p>
-              Settle into a personal treatment setting arranged to
-              support quiet, comfort and a sense of ease.
+              Settle into a personal setting arranged to support
+              privacy, comfort and a sense of ease.
             </p>
           </article>
 
           <article class="experience-step reveal delay-3">
-            <span class="step-number">04</span>
+            <span class="step-number">
+              04
+            </span>
 
             <div class="step-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24">
@@ -3092,7 +3886,7 @@
             <h3>Restful Finish</h3>
 
             <p>
-              Take a moment before returning to your day, carrying a
+              Take a moment before returning to your day and carry a
               calmer pace beyond the room.
             </p>
           </article>
@@ -3104,6 +3898,329 @@
          SERVICES & PRICING
     ====================================================== -->
     <section class="section services" id="services">
+      <div class="container">
+        <div class="services-intro">
+          <div>
+            <span class="eyebrow reveal">
+              Services & Pricing
+            </span>
+
+            <h2 class="section-title reveal delay-1">
+              A treatment for every
+              <em>kind of pause.</em>
+            </h2>
+          </div>
+
+          <p class="lead reveal delay-2">
+            Choose the massage style and time that suit you today.
+            Every price below matches our current in-store menu.
+          </p>
+        </div>
+
+        <article class="service-feature reveal">
+          <div class="service-feature-media">
+            <img
+              src="https://i.pinimg.com/1200x/dc/36/fe/dc36feaf9cc11bec29cc3de7834c539e.jpg"
+              alt="Relaxing full body massage in warm candlelight"
+              loading="lazy"
+              referrerpolicy="no-referrer"
+            >
+
+            <span class="service-index">
+              01 · Signature
+            </span>
+
+            <span class="service-feature-caption">
+              Flexible timing · Full-body care
+            </span>
+          </div>
+
+          <div class="service-feature-copy">
+            <span class="service-label">
+              Everyday Reset
+            </span>
+
+            <h3>Body Massage</h3>
+
+            <p>
+              A calming full-body session tailored to the time you
+              have. Choose a focused 30-minute reset or settle into a
+              longer, unhurried treatment.
+            </p>
+
+            <div
+              class="feature-price-grid"
+              aria-label="Body Massage pricing"
+            >
+              <div class="feature-price">
+                <span>30 Minutes</span>
+                <strong>$50</strong>
+              </div>
+
+              <div class="feature-price">
+                <span>60 Minutes</span>
+                <strong>$70</strong>
+              </div>
+
+              <div class="feature-price">
+                <span>90 Minutes</span>
+                <strong>$110</strong>
+              </div>
+
+              <div class="feature-price">
+                <span>2 Hours</span>
+                <strong>$150</strong>
+              </div>
+            </div>
+
+            <button
+              class="setmore-trigger feature-book"
+              type="button"
+              data-open-setmore
+            >
+              Book Body Massage
+            </button>
+          </div>
+        </article>
+
+        <div class="service-menu-grid">
+          <article class="menu-card menu-card--thai reveal">
+            <div class="menu-card-media">
+              <img
+                src="https://i.pinimg.com/736x/54/67/4c/54674c53291ba36c66ec8abe273764d3.jpg"
+                alt="Traditional Thai massage assisted stretching"
+                loading="lazy"
+                referrerpolicy="no-referrer"
+              >
+
+              <span class="menu-card-index" aria-hidden="true">
+                02
+              </span>
+            </div>
+
+            <div class="menu-card-body">
+              <span class="service-label">
+                Movement & Stretch
+              </span>
+
+              <h3>Thai Massage</h3>
+
+              <p class="menu-card-description">
+                Rhythmic pressure and assisted stretching for guests
+                who prefer a more active massage experience.
+              </p>
+
+              <div
+                class="menu-price-list"
+                aria-label="Thai Massage pricing"
+              >
+                <div class="menu-price-row">
+                  <span>60 Minutes</span>
+                  <strong>$100</strong>
+                </div>
+
+                <div class="menu-price-row">
+                  <span>90 Minutes</span>
+                  <strong>$160</strong>
+                </div>
+              </div>
+
+              <button
+                class="setmore-trigger menu-book"
+                type="button"
+                data-open-setmore
+              >
+                Book Thai Massage
+              </button>
+            </div>
+          </article>
+
+          <article class="menu-card menu-card--couples reveal delay-1">
+            <div class="menu-card-media">
+              <img
+                src="https://i.pinimg.com/736x/ac/a6/69/aca669d5a5fe654a32f0f6b3c5138275.jpg"
+                alt="Couple relaxing together during a spa massage"
+                loading="lazy"
+                referrerpolicy="no-referrer"
+              >
+
+              <span class="menu-card-index" aria-hidden="true">
+                03
+              </span>
+            </div>
+
+            <div class="menu-card-body">
+              <span class="service-label">
+                Time Together
+              </span>
+
+              <h3>Couples Massage</h3>
+
+              <p class="menu-card-description">
+                A coordinated appointment for two, enjoyed side by
+                side in a calm and private shared setting.
+              </p>
+
+              <div
+                class="menu-price-list"
+                aria-label="Couples Massage pricing"
+              >
+                <div class="menu-price-row">
+                  <span>60 Minutes</span>
+                  <strong>$140</strong>
+                </div>
+
+                <div class="menu-price-row">
+                  <span>90 Minutes</span>
+                  <strong>$220</strong>
+                </div>
+              </div>
+
+              <button
+                class="setmore-trigger menu-book"
+                type="button"
+                data-open-setmore
+              >
+                Book Couples Massage
+              </button>
+            </div>
+          </article>
+
+          <article class="menu-card menu-card--pregnancy reveal">
+            <div class="menu-card-media">
+              <img
+                src="https://i.pinimg.com/736x/f0/da/15/f0da15dc893429facf94557d70ef9038.jpg"
+                alt="Expectant mother receiving a supported pregnancy massage"
+                loading="lazy"
+                referrerpolicy="no-referrer"
+              >
+
+              <span class="menu-card-index" aria-hidden="true">
+                04
+              </span>
+            </div>
+
+            <div class="menu-card-body">
+              <span class="service-label">
+                Comfort-Focused
+              </span>
+
+              <h3>Pregnancy Massage</h3>
+
+              <p class="menu-card-description">
+                Gentle pacing and supported positioning for expectant
+                guests who would like quiet time to rest.
+              </p>
+
+              <div
+                class="menu-price-list"
+                aria-label="Pregnancy Massage pricing"
+              >
+                <div class="menu-price-row">
+                  <span>60 Minutes</span>
+                  <strong>$80</strong>
+                </div>
+
+                <div class="menu-price-row">
+                  <span>90 Minutes</span>
+                  <strong>$120</strong>
+                </div>
+              </div>
+
+              <button
+                class="setmore-trigger menu-book"
+                type="button"
+                data-open-setmore
+              >
+                Book Pregnancy Massage
+              </button>
+            </div>
+          </article>
+
+          <article class="menu-card menu-card--cbd reveal delay-1">
+            <div class="menu-card-media">
+              <img
+                src="https://i.pinimg.com/736x/77/cb/ff/77cbff7269270685093c45412667cf98.jpg"
+                alt="Organic hemp massage oil in a clean product setting"
+                loading="lazy"
+                referrerpolicy="no-referrer"
+              >
+
+              <span class="menu-card-index" aria-hidden="true">
+                05
+              </span>
+            </div>
+
+            <div class="menu-card-body">
+              <span class="service-label">
+                Smooth & Restful
+              </span>
+
+              <h3>CBD Oil Massage</h3>
+
+              <p class="menu-card-description">
+                A relaxed 60-minute massage incorporating CBD oil for
+                a smooth and unhurried experience.
+              </p>
+
+              <div
+                class="menu-price-list"
+                aria-label="CBD Oil Massage pricing"
+              >
+                <div class="menu-price-row">
+                  <span>60 Minutes</span>
+                  <strong>$100</strong>
+                </div>
+              </div>
+
+              <button
+                class="setmore-trigger menu-book"
+                type="button"
+                data-open-setmore
+              >
+                Book CBD Oil Massage
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <aside
+          class="service-addons reveal"
+          aria-label="Available massage add-ons"
+        >
+          <div class="service-addons-copy">
+            <span class="service-label">
+              Available Add-Ons
+            </span>
+
+            <h3>Make the session yours.</h3>
+
+            <p>
+              Add either option while scheduling. Availability and
+              suitability can be confirmed before your appointment.
+            </p>
+          </div>
+
+          <div class="addon-choice">
+            <span>Cupping</span>
+            <strong>$40</strong>
+          </div>
+
+          <div class="addon-choice">
+            <span>CBD Oil</span>
+            <strong>$20</strong>
+          </div>
+        </aside>
+
+        <p class="pricing-note">
+          Prices are shown as posted in-store. Please confirm your
+          selected service, duration and add-ons while booking.
+        </p>
+      </div>
+    </section>
+
+    <!-- Previous services layout retained only as source reference. -->
+    <template id="services-source">
       <div class="container">
         <div class="section-heading">
           <div>
@@ -3118,31 +4235,33 @@
           </div>
 
           <p class="lead reveal delay-2">
-            Explore the massage services currently offered at Massage
-            ViVa Georgetown, then use online booking to choose an
-            available appointment.
+            The services and prices below match the current in-store
+            price list. Select Book Now to view available appointments
+            through Setmore.
           </p>
         </div>
 
         <div class="service-stack">
-          <!-- BODY MASSAGE -->
+          <!-- =================================================
+               BODY MASSAGE
+          ================================================== -->
           <article class="service-card reveal">
             <div
-              class="service-media media-carousel"
+              class="service-media service-carousel"
               data-carousel
               data-interval="4700"
               aria-label="Body Massage image gallery"
             >
-              <div class="media-slide is-active">
+              <div class="service-slide service-slide--photo is-active">
                 <img
                   src="https://i.pinimg.com/1200x/dc/36/fe/dc36feaf9cc11bec29cc3de7834c539e.jpg"
-                  alt="Body massage in a quiet setting"
+                  alt="Body massage in a calm setting"
                   loading="lazy"
                   referrerpolicy="no-referrer"
                 >
               </div>
 
-              <div class="media-slide">
+              <div class="service-slide service-slide--photo">
                 <img
                   src="https://i.pinimg.com/736x/4c/2b/cb/4c2bcb39fbc7189277e8e505c2e1bc8f.jpg"
                   alt="Relaxing body massage treatment"
@@ -3151,16 +4270,16 @@
                 >
               </div>
 
-              <div class="media-slide">
+              <div class="service-slide service-slide--photo">
                 <img
                   src="https://i.pinimg.com/736x/c0/e8/3f/c0e83fc3058518c785d6cfe1b15da601.jpg"
-                  alt="Body massage focused on overall relaxation"
+                  alt="Body massage focused on quiet relaxation"
                   loading="lazy"
                   referrerpolicy="no-referrer"
                 >
               </div>
 
-              <div class="media-slide">
+              <div class="service-slide service-slide--photo">
                 <img
                   src="https://i.pinimg.com/736x/21/8f/4c/218f4cd988ca278667bd28ff54a577ff.jpg"
                   alt="Peaceful full body massage atmosphere"
@@ -3170,8 +4289,8 @@
               </div>
 
               <div
-                class="media-dots"
-                aria-label="Body Massage gallery navigation"
+                class="carousel-dots"
+                aria-label="Body Massage image navigation"
               ></div>
 
               <div class="carousel-controls">
@@ -3207,14 +4326,22 @@
               <p class="service-description">
                 A flexible full-body session for days when you feel
                 tired, tense or simply ready to slow down. Choose a
-                shorter reset or allow more time for a complete,
-                unhurried experience.
+                shorter reset or allow additional time for a more
+                complete, unhurried experience.
               </p>
 
               <div class="service-benefits">
-                <span class="benefit-chip">Everyday tension</span>
-                <span class="benefit-chip">Full-body fatigue</span>
-                <span class="benefit-chip">Quiet relaxation</span>
+                <span class="benefit-chip">
+                  Everyday tension
+                </span>
+
+                <span class="benefit-chip">
+                  Full-body fatigue
+                </span>
+
+                <span class="benefit-chip">
+                  Quiet relaxation
+                </span>
               </div>
 
               <div
@@ -3252,61 +4379,104 @@
             </div>
           </article>
 
-          <!-- THAI MASSAGE -->
+          <!-- =================================================
+               THAI MASSAGE
+               Pinterest images used because this category was
+               not included in the supplied image pool.
+          ================================================== -->
           <article class="service-card reveal">
             <div
-              class="service-media media-carousel is-single"
-              aria-label="Thai Massage visual"
+              class="service-media service-carousel"
+              data-carousel
+              data-interval="5600"
+              aria-label="Thai Massage Pinterest image gallery"
             >
-              <div class="media-slide is-active">
-                <div class="service-art">
-                  <svg
-                    viewBox="0 0 420 420"
-                    role="img"
-                    aria-labelledby="thaiArtTitle"
+              <div class="service-slide service-slide--pinterest is-active">
+                <span class="pinterest-source">
+                  Thai Massage · Pinterest
+                </span>
+
+                <div class="pinterest-visual">
+                  <a
+                    data-pin-do="embedPin"
+                    data-pin-width="large"
+                    href="https://www.pinterest.com/pin/464574517825643625/"
                   >
-                    <title id="thaiArtTitle">
-                      Abstract illustration representing Thai Massage
-                      stretching
-                    </title>
-
-                    <circle cx="210" cy="82" r="31"></circle>
-                    <path d="M210 114c-7 56-5 99 8 139"></path>
-                    <path d="M210 151c-52 13-91 44-119 92"></path>
-                    <path d="M211 151c47 10 83 37 112 79"></path>
-                    <path d="M218 253c-42 37-77 73-101 110"></path>
-                    <path d="M218 253c38 32 71 70 91 113"></path>
-                    <path d="M90 243c33 12 66 10 99-6"></path>
-                    <path d="M324 230c-34 17-67 21-101 13"></path>
-                    <path d="M64 351c94 27 193 28 292 0"></path>
-                    <path d="M79 370c86 18 174 18 263 0"></path>
-                  </svg>
-
-                  <div class="art-caption">
-                    <span>Stretch · Pressure · Rhythm</span>
-                  </div>
+                    View Thai massage stretching image on Pinterest
+                  </a>
                 </div>
+              </div>
+
+              <div class="service-slide service-slide--pinterest">
+                <span class="pinterest-source">
+                  Thai Massage · Pinterest
+                </span>
+
+                <div class="pinterest-visual">
+                  <a
+                    data-pin-do="embedPin"
+                    data-pin-width="large"
+                    href="https://www.pinterest.com/pin/815573814142109437/"
+                  >
+                    View Thai leg stretching image on Pinterest
+                  </a>
+                </div>
+              </div>
+
+              <div
+                class="carousel-dots"
+                aria-label="Thai Massage image navigation"
+              ></div>
+
+              <div class="carousel-controls">
+                <button
+                  class="carousel-button carousel-prev"
+                  type="button"
+                  aria-label="Previous Thai Massage image"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M15 18l-6-6 6-6"></path>
+                  </svg>
+                </button>
+
+                <button
+                  class="carousel-button carousel-next"
+                  type="button"
+                  aria-label="Next Thai Massage image"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M9 18l6-6-6-6"></path>
+                  </svg>
+                </button>
               </div>
             </div>
 
             <div class="service-content">
               <span class="service-kicker">
-                Movement & Release
+                Movement & Stretch
               </span>
 
               <h3>Thai Massage</h3>
 
               <p class="service-description">
-                A rhythmically paced session centered on pressure and
-                assisted stretching. A fitting choice when your body
-                feels stiff or you prefer a more active massage
-                experience.
+                A more active massage experience centered on rhythmic
+                pressure and assisted stretching. It may suit guests
+                who feel generally stiff or prefer a session with more
+                movement than a traditional table massage.
               </p>
 
               <div class="service-benefits">
-                <span class="benefit-chip">General stiffness</span>
-                <span class="benefit-chip">Stretch-focused</span>
-                <span class="benefit-chip">Longer sessions</span>
+                <span class="benefit-chip">
+                  General stiffness
+                </span>
+
+                <span class="benefit-chip">
+                  Assisted stretching
+                </span>
+
+                <span class="benefit-chip">
+                  Active experience
+                </span>
               </div>
 
               <div
@@ -3334,15 +4504,17 @@
             </div>
           </article>
 
-          <!-- COUPLES MASSAGE -->
+          <!-- =================================================
+               COUPLES MASSAGE
+          ================================================== -->
           <article class="service-card reveal">
             <div
-              class="service-media media-carousel"
+              class="service-media service-carousel"
               data-carousel
               data-interval="5200"
               aria-label="Couples Massage image gallery"
             >
-              <div class="media-slide is-active">
+              <div class="service-slide service-slide--photo is-active">
                 <img
                   src="https://i.pinimg.com/736x/ac/a6/69/aca669d5a5fe654a32f0f6b3c5138275.jpg"
                   alt="Couples massage in a shared relaxing setting"
@@ -3351,7 +4523,7 @@
                 >
               </div>
 
-              <div class="media-slide">
+              <div class="service-slide service-slide--photo">
                 <img
                   src="https://i.pinimg.com/736x/8d/88/02/8d88021e4d32ed8abd1452b7f48ce00b.jpg"
                   alt="Private couples massage atmosphere"
@@ -3360,7 +4532,7 @@
                 >
               </div>
 
-              <div class="media-slide">
+              <div class="service-slide service-slide--photo">
                 <img
                   src="https://i.pinimg.com/736x/70/cb/60cfa74373d9c0a2e39d478f489e.jpg"
                   alt="Shared couples massage experience"
@@ -3369,18 +4541,18 @@
                 >
               </div>
 
-              <div class="media-slide">
+              <div class="service-slide service-slide--photo">
                 <img
                   src="https://i.pinimg.com/1200x/07/13/62/0713626b6e91eb53a1b7b60a3d0dfd8e.jpg"
-                  alt="Couples massage room with a calm atmosphere"
+                  alt="Couples massage room with calm lighting"
                   loading="lazy"
                   referrerpolicy="no-referrer"
                 >
               </div>
 
               <div
-                class="media-dots"
-                aria-label="Couples Massage gallery navigation"
+                class="carousel-dots"
+                aria-label="Couples Massage image navigation"
               ></div>
 
               <div class="carousel-controls">
@@ -3414,15 +4586,23 @@
               <h3>Couples Massage</h3>
 
               <p class="service-description">
-                A coordinated massage appointment for two in a shared
-                setting. Create room to pause together while each guest
-                enjoys an individual, quiet experience.
+                A coordinated appointment for two in a shared setting.
+                Create room to pause together while each guest enjoys
+                an individual and peaceful massage experience.
               </p>
 
               <div class="service-benefits">
-                <span class="benefit-chip">Shared appointment</span>
-                <span class="benefit-chip">Quiet time together</span>
-                <span class="benefit-chip">Private atmosphere</span>
+                <span class="benefit-chip">
+                  Shared appointment
+                </span>
+
+                <span class="benefit-chip">
+                  Quiet time together
+                </span>
+
+                <span class="benefit-chip">
+                  Private atmosphere
+                </span>
               </div>
 
               <div
@@ -3450,40 +4630,75 @@
             </div>
           </article>
 
-          <!-- PREGNANCY MASSAGE -->
+          <!-- =================================================
+               PREGNANCY MASSAGE
+               Pinterest images used because this category was
+               not included in the supplied image pool.
+          ================================================== -->
           <article class="service-card reveal">
             <div
-              class="service-media media-carousel is-single"
-              aria-label="Pregnancy Massage visual"
+              class="service-media service-carousel"
+              data-carousel
+              data-interval="5800"
+              aria-label="Pregnancy Massage Pinterest image gallery"
             >
-              <div class="media-slide is-active">
-                <div class="service-art">
-                  <svg
-                    viewBox="0 0 420 420"
-                    role="img"
-                    aria-labelledby="pregnancyArtTitle"
+              <div class="service-slide service-slide--pinterest is-active">
+                <span class="pinterest-source">
+                  Pregnancy Massage · Pinterest
+                </span>
+
+                <div class="pinterest-visual">
+                  <a
+                    data-pin-do="embedPin"
+                    data-pin-width="large"
+                    href="https://www.pinterest.com/pin/548876273356806020/"
                   >
-                    <title id="pregnancyArtTitle">
-                      Abstract illustration representing supported
-                      Pregnancy Massage
-                    </title>
-
-                    <circle cx="218" cy="78" r="30"></circle>
-                    <path d="M209 109c-12 35-14 71-5 107"></path>
-                    <path d="M204 144c-39 18-70 49-89 91"></path>
-                    <path d="M202 157c56-2 101 26 128 81"></path>
-                    <path d="M204 216c14 48 4 94-29 137"></path>
-                    <path d="M204 216c48 23 81 65 95 126"></path>
-                    <path d="M173 179c38-13 78 1 96 37 15 30 5 67-22 85"></path>
-                    <path d="M88 353c86-29 169-29 249 0"></path>
-                    <path d="M72 373h276"></path>
-                    <path d="M105 235c26 10 50 8 73-5"></path>
-                  </svg>
-
-                  <div class="art-caption">
-                    <span>Support · Comfort · Quiet</span>
-                  </div>
+                    View prenatal massage setup image on Pinterest
+                  </a>
                 </div>
+              </div>
+
+              <div class="service-slide service-slide--pinterest">
+                <span class="pinterest-source">
+                  Pregnancy Massage · Pinterest
+                </span>
+
+                <div class="pinterest-visual">
+                  <a
+                    data-pin-do="embedPin"
+                    data-pin-width="large"
+                    href="https://www.pinterest.com/pin/392657661279785859/"
+                  >
+                    View pregnancy massage spa image on Pinterest
+                  </a>
+                </div>
+              </div>
+
+              <div
+                class="carousel-dots"
+                aria-label="Pregnancy Massage image navigation"
+              ></div>
+
+              <div class="carousel-controls">
+                <button
+                  class="carousel-button carousel-prev"
+                  type="button"
+                  aria-label="Previous Pregnancy Massage image"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M15 18l-6-6 6-6"></path>
+                  </svg>
+                </button>
+
+                <button
+                  class="carousel-button carousel-next"
+                  type="button"
+                  aria-label="Next Pregnancy Massage image"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M9 18l6-6-6-6"></path>
+                  </svg>
+                </button>
               </div>
             </div>
 
@@ -3495,18 +4710,25 @@
               <h3>Pregnancy Massage</h3>
 
               <p class="service-description">
-                A comfort-conscious massage option for expectant guests
-                who would like time to rest and unwind. Please share
-                your stage of pregnancy, sensitivities and any guidance
-                from your healthcare provider when booking.
+                A comfort-conscious massage option for expectant
+                guests who would like quiet time to rest and unwind.
+                Please share your stage of pregnancy, sensitivities
+                and any guidance from your healthcare provider when
+                booking.
               </p>
 
               <div class="service-benefits">
                 <span class="benefit-chip">
                   Supported positioning
                 </span>
-                <span class="benefit-chip">Gentle pacing</span>
-                <span class="benefit-chip">Quiet rest</span>
+
+                <span class="benefit-chip">
+                  Gentle pacing
+                </span>
+
+                <span class="benefit-chip">
+                  Quiet rest
+                </span>
               </div>
 
               <div
@@ -3534,50 +4756,75 @@
             </div>
           </article>
 
-          <!-- CBD OIL MASSAGE -->
+          <!-- =================================================
+               CBD OIL MASSAGE
+               Pinterest images used because this category was
+               not included in the supplied image pool.
+          ================================================== -->
           <article class="service-card reveal">
             <div
-              class="service-media media-carousel is-single"
-              aria-label="CBD Oil Massage visual"
+              class="service-media service-carousel"
+              data-carousel
+              data-interval="5700"
+              aria-label="CBD Oil Massage Pinterest image gallery"
             >
-              <div class="media-slide is-active">
-                <div class="service-art">
-                  <svg
-                    viewBox="0 0 420 420"
-                    role="img"
-                    aria-labelledby="cbdArtTitle"
+              <div class="service-slide service-slide--pinterest is-active">
+                <span class="pinterest-source">
+                  CBD Oil · Pinterest
+                </span>
+
+                <div class="pinterest-visual">
+                  <a
+                    data-pin-do="embedPin"
+                    data-pin-width="large"
+                    href="https://www.pinterest.com/pin/354799276904991933/"
                   >
-                    <title id="cbdArtTitle">
-                      Abstract illustration of massage oil and
-                      botanical leaves
-                    </title>
-
-                    <path d="M174 118h72"></path>
-                    <path d="M184 118V80h52v38"></path>
-                    <path d="M192 80V54h36v26"></path>
-
-                    <rect
-                      x="153"
-                      y="118"
-                      width="114"
-                      height="205"
-                      rx="31"
-                    ></rect>
-
-                    <path d="M179 178c21-18 42-18 63 0-17 12-38 15-63 0Z"></path>
-                    <path d="M210 178v59"></path>
-                    <path d="M210 204c-26-7-44-23-54-48 28 0 47 16 54 48Z"></path>
-                    <path d="M210 219c28-8 48-25 58-52-29 1-49 18-58 52Z"></path>
-                    <path d="M99 318c33-38 65-57 96-57"></path>
-                    <path d="M321 318c-34-38-66-57-96-57"></path>
-                    <path d="M75 351c89 23 179 23 270 0"></path>
-                    <path d="M93 374h254"></path>
-                  </svg>
-
-                  <div class="art-caption">
-                    <span>Oil · Ease · Unwind</span>
-                  </div>
+                    View hemp massage oil image on Pinterest
+                  </a>
                 </div>
+              </div>
+
+              <div class="service-slide service-slide--pinterest">
+                <span class="pinterest-source">
+                  Massage Oil · Pinterest
+                </span>
+
+                <div class="pinterest-visual">
+                  <a
+                    data-pin-do="embedPin"
+                    data-pin-width="large"
+                    href="https://www.pinterest.com/pin/1089730441240689332/"
+                  >
+                    View hemp-infused body oil image on Pinterest
+                  </a>
+                </div>
+              </div>
+
+              <div
+                class="carousel-dots"
+                aria-label="CBD Oil Massage image navigation"
+              ></div>
+
+              <div class="carousel-controls">
+                <button
+                  class="carousel-button carousel-prev"
+                  type="button"
+                  aria-label="Previous CBD Oil Massage image"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M15 18l-6-6 6-6"></path>
+                  </svg>
+                </button>
+
+                <button
+                  class="carousel-button carousel-next"
+                  type="button"
+                  aria-label="Next CBD Oil Massage image"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M9 18l6-6-6-6"></path>
+                  </svg>
+                </button>
               </div>
             </div>
 
@@ -3589,15 +4836,24 @@
               <h3>CBD Oil Massage</h3>
 
               <p class="service-description">
-                A 60-minute massage incorporating CBD oil for a smooth,
-                unhurried experience. Please mention skin sensitivities
-                or product concerns before your appointment.
+                A 60-minute massage incorporating CBD oil for a smooth
+                and unhurried experience. Please mention skin
+                sensitivities, allergies or product concerns before
+                the appointment.
               </p>
 
               <div class="service-benefits">
-                <span class="benefit-chip">60-minute session</span>
-                <span class="benefit-chip">CBD oil included</span>
-                <span class="benefit-chip">Relaxed pacing</span>
+                <span class="benefit-chip">
+                  60-minute session
+                </span>
+
+                <span class="benefit-chip">
+                  CBD oil included
+                </span>
+
+                <span class="benefit-chip">
+                  Relaxed pacing
+                </span>
               </div>
 
               <div
@@ -3620,7 +4876,9 @@
             </div>
           </article>
 
-          <!-- ADD-ONS -->
+          <!-- =================================================
+               ADD-ONS
+          ================================================== -->
           <aside
             class="addon-panel reveal"
             aria-label="Available massage add-ons"
@@ -3630,10 +4888,12 @@
                 Available Add-Ons
               </span>
 
-              <h3>Personalize your appointment.</h3>
+              <h3>
+                Personalize your appointment.
+              </h3>
 
               <p>
-                Ask about adding either option when scheduling.
+                Ask about adding either option while scheduling.
                 Availability and suitability can be confirmed before
                 your session.
               </p>
@@ -3652,11 +4912,12 @@
         </div>
 
         <p class="pricing-note">
-          Prices are shown as posted in-store. Please confirm your
-          service, session length and total price during online booking.
+          Prices are shown as posted in-store. Please confirm the
+          selected service, duration, add-ons and total price while
+          booking.
         </p>
       </div>
-    </section>
+    </template>
 
     <!-- =====================================================
          GALLERY
@@ -3762,7 +5023,7 @@
     </section>
 
     <!-- =====================================================
-         SETMORE BOOKING
+         BOOKING
     ====================================================== -->
     <section class="section booking" id="booking">
       <div class="container">
@@ -3776,10 +5037,12 @@
             >
 
             <div class="booking-image-copy">
-              <span>Online Reservation</span>
+              <span>
+                Online Reservation
+              </span>
 
               <h3>
-                Choose your service and available time in just a few
+                Choose your service and available time in a few
                 simple steps.
               </h3>
             </div>
@@ -3795,42 +5058,56 @@
             </h2>
 
             <p>
-              Use the secure online booking window to review
-              availability, choose your service and reserve your
-              preferred appointment time.
+              Use the online booking window to review availability,
+              choose your service and reserve your preferred
+              appointment time.
             </p>
 
             <div class="booking-steps">
               <div class="booking-step">
-                <span class="booking-step-number">1</span>
+                <span class="booking-step-number">
+                  1
+                </span>
 
                 <div>
-                  <strong>Select your service</strong>
+                  <strong>
+                    Select your service
+                  </strong>
+
                   <span>
-                    Choose from the massage services listed above.
+                    Choose from the five services listed above.
                   </span>
                 </div>
               </div>
 
               <div class="booking-step">
-                <span class="booking-step-number">2</span>
+                <span class="booking-step-number">
+                  2
+                </span>
 
                 <div>
-                  <strong>Choose an available time</strong>
+                  <strong>
+                    Choose an available time
+                  </strong>
+
                   <span>
-                    View available appointment dates and times.
+                    Review available appointment dates and times.
                   </span>
                 </div>
               </div>
 
               <div class="booking-step">
-                <span class="booking-step-number">3</span>
+                <span class="booking-step-number">
+                  3
+                </span>
 
                 <div>
-                  <strong>Confirm your reservation</strong>
+                  <strong>
+                    Confirm your reservation
+                  </strong>
+
                   <span>
-                    Enter your contact details and complete your
-                    booking.
+                    Enter your contact details and complete the booking.
                   </span>
                 </div>
               </div>
@@ -3854,9 +5131,9 @@
             </div>
 
             <p class="booking-note">
-              The booking window is provided by Setmore and opens
-              without leaving this website when supported by your
-              browser.
+              The booking window is provided by Setmore. When
+              supported by the browser, it opens without leaving this
+              website.
             </p>
           </div>
         </div>
@@ -3881,14 +5158,14 @@
           </div>
 
           <p class="lead reveal delay-2">
-            Calm surroundings, a clean setting and smooth online
-            booking can make a simple pause feel genuinely restorative.
+            Calm surroundings, a clean setting and convenient online
+            booking can make a simple pause feel more complete.
           </p>
         </div>
 
         <p class="review-note">
-          Sample review presentation copy. Replace these examples with
-          verified customer reviews before publishing.
+          Sample review presentation copy. Replace these examples
+          with verified customer reviews before publishing.
         </p>
       </div>
 
@@ -3898,10 +5175,7 @@
       >
         <div class="review-track">
           <article class="review-card">
-            <div
-              class="review-stars"
-              aria-label="Five stars"
-            >
+            <div class="review-stars" aria-label="Five stars">
               ★★★★★
             </div>
 
@@ -3917,16 +5191,13 @@
           </article>
 
           <article class="review-card">
-            <div
-              class="review-stars"
-              aria-label="Five stars"
-            >
+            <div class="review-stars" aria-label="Five stars">
               ★★★★★
             </div>
 
             <blockquote>
-              “Online booking was simple, the atmosphere was peaceful
-              and I never felt rushed.”
+              “Online booking was straightforward, and the atmosphere
+              felt peaceful without being overly formal.”
             </blockquote>
 
             <div class="review-meta">
@@ -3936,15 +5207,12 @@
           </article>
 
           <article class="review-card">
-            <div
-              class="review-stars"
-              aria-label="Five stars"
-            >
+            <div class="review-stars" aria-label="Five stars">
               ★★★★★
             </div>
 
             <blockquote>
-              “A calm, private space that made it easy to step away
+              “A calm and private space that made it easy to step away
               from a very busy week.”
             </blockquote>
 
@@ -3955,10 +5223,7 @@
           </article>
 
           <article class="review-card">
-            <div
-              class="review-stars"
-              aria-label="Five stars"
-            >
+            <div class="review-stars" aria-label="Five stars">
               ★★★★★
             </div>
 
@@ -3974,10 +5239,7 @@
           </article>
 
           <article class="review-card">
-            <div
-              class="review-stars"
-              aria-label="Five stars"
-            >
+            <div class="review-stars" aria-label="Five stars">
               ★★★★★
             </div>
 
@@ -4000,10 +5262,7 @@
       >
         <div class="review-track">
           <article class="review-card">
-            <div
-              class="review-stars"
-              aria-label="Five stars"
-            >
+            <div class="review-stars" aria-label="Five stars">
               ★★★★★
             </div>
 
@@ -4019,16 +5278,13 @@
           </article>
 
           <article class="review-card">
-            <div
-              class="review-stars"
-              aria-label="Five stars"
-            >
+            <div class="review-stars" aria-label="Five stars">
               ★★★★★
             </div>
 
             <blockquote>
-              “The space felt discreet and welcoming, and choosing the
-              appointment online was easy.”
+              “The space felt discreet and welcoming, and choosing an
+              appointment online was quick.”
             </blockquote>
 
             <div class="review-meta">
@@ -4038,16 +5294,13 @@
           </article>
 
           <article class="review-card">
-            <div
-              class="review-stars"
-              aria-label="Five stars"
-            >
+            <div class="review-stars" aria-label="Five stars">
               ★★★★★
             </div>
 
             <blockquote>
-              “Soft lighting, a quiet room and enough time to truly
-              settle in made a noticeable difference.”
+              “Soft lighting, a quiet room and enough time to settle
+              in made the visit feel genuinely restful.”
             </blockquote>
 
             <div class="review-meta">
@@ -4057,10 +5310,7 @@
           </article>
 
           <article class="review-card">
-            <div
-              class="review-stars"
-              aria-label="Five stars"
-            >
+            <div class="review-stars" aria-label="Five stars">
               ★★★★★
             </div>
 
@@ -4076,16 +5326,13 @@
           </article>
 
           <article class="review-card">
-            <div
-              class="review-stars"
-              aria-label="Five stars"
-            >
+            <div class="review-stars" aria-label="Five stars">
               ★★★★★
             </div>
 
             <blockquote>
               “It was a peaceful break in the middle of the week. I
-              left feeling rested and unhurried.”
+              never felt hurried during the visit.”
             </blockquote>
 
             <div class="review-meta">
@@ -4143,7 +5390,10 @@
                 aria-expanded="true"
                 aria-controls="faqAnswer1"
               >
-                <span>How early should I arrive?</span>
+                <span>
+                  How early should I arrive?
+                </span>
+
                 <span
                   class="faq-toggle"
                   aria-hidden="true"
@@ -4183,9 +5433,9 @@
               <div class="faq-answer-inner">
                 Speak with your healthcare provider when an injury,
                 recent procedure or medical concern may affect
-                massage. Please describe the situation when booking so
-                the studio can determine whether the appointment
-                should be adjusted or postponed.
+                massage. Describe the situation while booking so the
+                studio can discuss whether the appointment should be
+                adjusted or postponed.
               </div>
             </div>
           </article>
@@ -4212,7 +5462,7 @@
             <div class="faq-answer" id="faqAnswer3">
               <div class="faq-answer-inner">
                 Please call as early as possible if your plans change.
-                Current cancellation or rescheduling terms can be
+                Current cancellation and rescheduling terms can be
                 confirmed during online booking or by calling the
                 studio.
               </div>
@@ -4227,7 +5477,9 @@
                 aria-expanded="false"
                 aria-controls="faqAnswer4"
               >
-                <span>Is there parking available?</span>
+                <span>
+                  Is there parking available?
+                </span>
 
                 <span
                   class="faq-toggle"
@@ -4251,7 +5503,10 @@
     <!-- =====================================================
          CONTACT
     ====================================================== -->
-    <section class="section contact-section" id="contact">
+    <section
+      class="section contact-section"
+      id="contact"
+    >
       <div class="container">
         <div class="contact-shell reveal">
           <div class="contact-copy">
@@ -4281,6 +5536,7 @@
 
               <div class="contact-detail">
                 <strong>Phone</strong>
+
                 <a href="tel:+15128517665">
                   512-851-7665
                 </a>
@@ -4377,8 +5633,8 @@
         </a>
 
         <p>
-          A quiet, private setting for massage, unhurried rest and a
-          welcome pause from the pace of everyday life.
+          A quiet and private setting for massage, unhurried rest and
+          a welcome pause from the pace of everyday life.
         </p>
       </div>
 
@@ -4412,7 +5668,7 @@
           </a>
 
           <span>
-            Mon–Sat: 10 AM–8 PM
+            Monday–Saturday: 10 AM–8 PM
           </span>
 
           <span>
@@ -4434,6 +5690,32 @@
     </div>
   </footer>
 
+  <!-- Mobile fixed booking bar -->
+  <div
+    class="mobile-booking-bar"
+    aria-label="Quick booking actions"
+  >
+    <button
+      class="setmore-trigger"
+      type="button"
+      data-open-setmore
+    >
+      Book Now
+    </button>
+
+    <a
+      class="mobile-call"
+      href="tel:+15128517665"
+      aria-label="Call Massage ViVa Georgetown"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          d="M6.5 3h3l1.5 5-2 1.5a15 15 0 0 0 5.5 5.5l1.5-2 5 1.5v3A3.5 3.5 0 0 1 17.5 21C9.5 20.5 3.5 14.5 3 6.5A3.5 3.5 0 0 1 6.5 3Z"
+        ></path>
+      </svg>
+    </a>
+  </div>
+
   <!-- =======================================================
        SETMORE INTEGRATION
   ======================================================== -->
@@ -4441,19 +5723,38 @@
     id="anywhere_book_now_script"
     type="text/javascript"
     src="https://assets.setmore.com/integration/book-now/live/v1/anywhere-book-now.js"
+    onload="document.documentElement.dataset.setmoreReady='true'"
+  ></script>
+
+  <!-- Pinterest embed script for missing service images -->
+  <script
+    async
+    defer
+    src="https://assets.pinterest.com/js/pinit.js"
   ></script>
 
   <script>
     /* =========================================================
-       GENERAL SETTINGS
+       GENERAL
     ========================================================= */
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
 
-    const siteHeader = document.getElementById("siteHeader");
-    const menuToggle = document.getElementById("menuToggle");
-    const mobileMenu = document.getElementById("mobileMenu");
+    const siteHeader =
+      document.getElementById("siteHeader");
+
+    const menuToggle =
+      document.getElementById("menuToggle");
+
+    const mobileMenu =
+      document.getElementById("mobileMenu");
+
+    const primarySetmoreButton =
+      document.getElementById("Anywhere_button_iframe");
+
+    const SETMORE_URL =
+      "https://massagevivaui87.setmore.com";
 
     document.getElementById("currentYear").textContent =
       new Date().getFullYear();
@@ -4465,44 +5766,13 @@
 
         if (image.parentElement) {
           image.parentElement.style.background =
-            "linear-gradient(145deg, #27493d, #0c2119)";
+            "linear-gradient(145deg, #294f40, #0d2119)";
         }
       });
     });
 
     /* =========================================================
-       SETMORE BUTTON TRIGGERS
-
-       Only the hero button uses the required Setmore ID.
-       Every other Book Now button activates that primary button.
-    ========================================================= */
-    const primarySetmoreButton = document.getElementById(
-      "Anywhere_button_iframe"
-    );
-
-    function openSetmoreBooking() {
-      closeMenu();
-
-      if (primarySetmoreButton) {
-        primarySetmoreButton.click();
-        return;
-      }
-
-      window.open(
-        "https://massagevivaui87.setmore.com",
-        "_blank",
-        "noopener,noreferrer"
-      );
-    }
-
-    document
-      .querySelectorAll("[data-open-setmore]")
-      .forEach((button) => {
-        button.addEventListener("click", openSetmoreBooking);
-      });
-
-    /* =========================================================
-       STICKY HEADER
+       HEADER
     ========================================================= */
     function updateHeader() {
       siteHeader.classList.toggle(
@@ -4513,9 +5783,11 @@
 
     updateHeader();
 
-    window.addEventListener("scroll", updateHeader, {
-      passive: true
-    });
+    window.addEventListener(
+      "scroll",
+      updateHeader,
+      { passive: true }
+    );
 
     /* =========================================================
        MOBILE MENU
@@ -4556,7 +5828,11 @@
       const isOpen =
         menuToggle.getAttribute("aria-expanded") === "true";
 
-      isOpen ? closeMenu() : openMenu();
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
     });
 
     mobileMenu
@@ -4576,6 +5852,36 @@
         closeMenu();
       }
     });
+
+    /* =========================================================
+       SETMORE PROXY BUTTONS
+    ========================================================= */
+    function openSetmoreBooking() {
+      closeMenu();
+
+      const setmoreReady =
+        document.documentElement.dataset.setmoreReady === "true";
+
+      if (primarySetmoreButton && setmoreReady) {
+        primarySetmoreButton.click();
+        return;
+      }
+
+      window.open(
+        SETMORE_URL,
+        "_blank",
+        "noopener,noreferrer"
+      );
+    }
+
+    document
+      .querySelectorAll("[data-open-setmore]")
+      .forEach((button) => {
+        button.addEventListener(
+          "click",
+          openSetmoreBooking
+        );
+      });
 
     /* =========================================================
        HERO CAROUSEL
@@ -4609,7 +5915,8 @@
       heroDotsContainer
         .querySelectorAll(".hero-dot")
         .forEach((dot, dotIndex) => {
-          const active = dotIndex === heroIndex;
+          const active =
+            dotIndex === heroIndex;
 
           dot.classList.toggle(
             "is-active",
@@ -4624,7 +5931,8 @@
     }
 
     heroSlides.forEach((_, index) => {
-      const dot = document.createElement("button");
+      const dot =
+        document.createElement("button");
 
       dot.className = "hero-dot";
       dot.type = "button";
@@ -4645,7 +5953,8 @@
     function startHeroTimer() {
       if (
         prefersReducedMotion ||
-        heroSlides.length < 2
+        heroSlides.length < 2 ||
+        heroTimer
       ) {
         return;
       }
@@ -4655,8 +5964,13 @@
       }, 6300);
     }
 
-    function restartHeroTimer() {
+    function stopHeroTimer() {
       window.clearInterval(heroTimer);
+      heroTimer = null;
+    }
+
+    function restartHeroTimer() {
+      stopHeroTimer();
       startHeroTimer();
     }
 
@@ -4671,11 +5985,11 @@
         this.element = element;
 
         this.slides = Array.from(
-          element.querySelectorAll(".media-slide")
+          element.querySelectorAll(".service-slide")
         );
 
         this.dotsContainer =
-          element.querySelector(".media-dots");
+          element.querySelector(".carousel-dots");
 
         this.prevButton =
           element.querySelector(".carousel-prev");
@@ -4687,12 +6001,7 @@
         this.timer = null;
 
         this.interval =
-          Number(element.dataset.interval) || 5000;
-
-        if (this.slides.length <= 1) {
-          element.classList.add("is-single");
-          return;
-        }
+          Number(element.dataset.interval) || 5200;
 
         this.buildDots();
         this.bindEvents();
@@ -4710,7 +6019,7 @@
             document.createElement("button");
 
           dot.type = "button";
-          dot.className = "media-dot";
+          dot.className = "carousel-dot";
 
           dot.setAttribute(
             "aria-label",
@@ -4745,30 +6054,22 @@
 
         this.element.addEventListener(
           "mouseenter",
-          () => {
-            this.stop();
-          }
+          () => this.stop()
         );
 
         this.element.addEventListener(
           "mouseleave",
-          () => {
-            this.start();
-          }
+          () => this.start()
         );
 
         this.element.addEventListener(
           "focusin",
-          () => {
-            this.stop();
-          }
+          () => this.stop()
         );
 
         this.element.addEventListener(
           "focusout",
-          () => {
-            this.start();
-          }
+          () => this.start()
         );
 
         let touchStartX = 0;
@@ -4779,9 +6080,7 @@
             touchStartX =
               event.changedTouches[0].clientX;
           },
-          {
-            passive: true
-          }
+          { passive: true }
         );
 
         this.element.addEventListener(
@@ -4800,9 +6099,7 @@
               this.restart();
             }
           },
-          {
-            passive: true
-          }
+          { passive: true }
         );
       }
 
@@ -4829,7 +6126,7 @@
         );
 
         this.dotsContainer
-          ?.querySelectorAll(".media-dot")
+          ?.querySelectorAll(".carousel-dot")
           .forEach((dot, dotIndex) => {
             const active =
               dotIndex === this.index;
@@ -4849,7 +6146,7 @@
       start() {
         if (
           prefersReducedMotion ||
-          this.slides.length <= 1 ||
+          this.slides.length < 2 ||
           this.timer
         ) {
           return;
@@ -4878,45 +6175,41 @@
       });
 
     /* =========================================================
-       FAQ ACCORDION
+       FAQ
     ========================================================= */
     const faqButtons =
       document.querySelectorAll(".faq-question");
 
     function setFaqState(button, expanded) {
-      const answer = document.getElementById(
-        button.getAttribute("aria-controls")
-      );
+      const answer =
+        document.getElementById(
+          button.getAttribute("aria-controls")
+        );
 
       button.setAttribute(
         "aria-expanded",
         String(expanded)
       );
 
-      answer.style.maxHeight = expanded
-        ? `${answer.scrollHeight}px`
-        : "0px";
+      answer.style.maxHeight =
+        expanded
+          ? `${answer.scrollHeight}px`
+          : "0px";
     }
 
     faqButtons.forEach((button) => {
       const expanded =
-        button.getAttribute("aria-expanded") ===
-        "true";
+        button.getAttribute("aria-expanded") === "true";
 
       setFaqState(button, expanded);
 
       button.addEventListener("click", () => {
         const currentlyExpanded =
-          button.getAttribute(
-            "aria-expanded"
-          ) === "true";
+          button.getAttribute("aria-expanded") === "true";
 
         faqButtons.forEach((otherButton) => {
           if (otherButton !== button) {
-            setFaqState(
-              otherButton,
-              false
-            );
+            setFaqState(otherButton, false);
           }
         });
 
@@ -4930,9 +6223,7 @@
     window.addEventListener("resize", () => {
       faqButtons.forEach((button) => {
         if (
-          button.getAttribute(
-            "aria-expanded"
-          ) === "true"
+          button.getAttribute("aria-expanded") === "true"
         ) {
           setFaqState(button, true);
         }
@@ -4940,7 +6231,7 @@
     });
 
     /* =========================================================
-       REVIEW MARQUEE
+       REVIEW MARQUEES
     ========================================================= */
     document
       .querySelectorAll(".review-track")
@@ -4962,7 +6253,7 @@
       });
 
     /* =========================================================
-       SCROLL REVEAL
+       SCROLL REVEALS
     ========================================================= */
     const revealItems =
       document.querySelectorAll(".reveal");
@@ -4984,9 +6275,7 @@
                   "is-visible"
                 );
 
-                observer.unobserve(
-                  entry.target
-                );
+                observer.unobserve(entry.target);
               }
             });
           },
@@ -5048,7 +6337,9 @@
           {
             rootMargin:
               "-25% 0px -60% 0px",
-            threshold: [0.05, 0.2, 0.5]
+
+            threshold:
+              [0.05, 0.2, 0.5]
           }
         );
 
